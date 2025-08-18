@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Button } from '../ui/Button';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -100,9 +101,13 @@ export default function FAQ() {
                   {faq.question}
                 </h3>
                 {openIndex === index ? (
-                  <ChevronUp className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <div className="bg-blue-50 p-2 rounded-full">
+                    <ChevronUp className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  </div>
                 ) : (
-                  <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                  <div className="bg-gray-50 p-2 rounded-full">
+                    <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                  </div>
                 )}
               </button>
               
@@ -148,20 +153,24 @@ export default function FAQ() {
           >
             Still have questions? We're here to help.
           </motion.p>
-          <motion.button 
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl"
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.98 }}
           >
-            Contact Our Team
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </motion.button>
+            <Button
+              variant="primary"
+              size="lg"
+              rightIcon={
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              }
+            >
+              Contact Our Team
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

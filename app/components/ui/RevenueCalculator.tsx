@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { MapPin, Home, Sofa, Calculator, TrendingUp } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { Button } from "./Button";
 
 export default function RevenueCalculator() {
   const [area, setArea] = useState("");
@@ -363,13 +364,13 @@ export default function RevenueCalculator() {
                         </div>
 
                         {/* CTA Button */}
-                        <motion.button
-                          className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl"
-                          whileHover={{ y: -2 }}
-                          whileTap={{ scale: 0.98 }}
+                        <Button
+                          variant="primary"
+                          size="lg"
+                          className="w-full"
                         >
                           Book Free Consultation
-                        </motion.button>
+                        </Button>
                       </motion.div>
                     ) : (
                       <motion.div

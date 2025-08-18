@@ -1,22 +1,23 @@
 "use client";
 
 import { motion } from "motion/react";
+import { Button } from "../ui/Button";
 
 export default function Hero() {
   return (
     <div className="pt-20 p-4 md:pt-40 md:p-6 lg:p-8 lg:pt-24">
       <motion.section 
-        className="relative h-[70vh] md:h-[80vh] overflow-hidden rounded-2xl"
-        initial={{ opacity: 0, scale: 0.95 }}
+        className="relative h-[70vh] md:h-[80vh] overflow-hidden rounded-xl"
+        initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         {/* Video Background */}
         <motion.div 
           className="absolute inset-0"
-          initial={{ scale: 1.1 }}
+          initial={{ scale: 1.05 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <video
             autoPlay
@@ -25,16 +26,18 @@ export default function Hero() {
             playsInline
             className="w-full h-full object-cover"
             poster="/dubai-luxury-property-poster.jpg"
+            aria-label="Background video showing luxury Dubai properties"
           >
             <source src="https://demo1.angelostone.ca/wp-content/uploads/2025/03/Palm-apartments.mp4" type="video/mp4" />
             <source src="/dubai-luxury-properties.webm" type="video/webm" />
+            Your browser does not support the video tag.
           </video>
           {/* Gradient Overlay */}
           <motion.div 
             className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           />
         </motion.div>
         
@@ -46,28 +49,58 @@ export default function Hero() {
                 className="text-5xl lg:text-6xl font-bold text-white leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
               >
-                Luxury Short-Term Rental Management
+                Turn Your Dubai Property Into a 5-Star Revenue Machine
               </motion.h1>
               <motion.p 
-                className="text-lg text-white/80 mt-4 leading-relaxed"
+                className="text-xl text-white/90 mt-6 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
               >
-                Premium property management for short-term rentals across Dubai.
+                Average 35% higher returns than traditional rentals. Superhost management with 4.9★ guest ratings.
               </motion.p>
-              <motion.button 
-                className="mt-8 bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-gray-50 hover:shadow-lg"
+              <motion.div 
+                className="flex flex-wrap gap-4 mt-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
               >
-                Book a Free Consultation
-              </motion.button>
+                <span className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full text-white/95">
+                  <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Licensed by Dubai Tourism
+                </span>
+                <span className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full text-white/95">
+                  <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  110+ Luxury Properties
+                </span>
+                <span className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full text-white/95">
+                  <svg className="w-5 h-5 text-rose-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Airbnb Superhost
+                </span>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
+                className="mt-8"
+              >
+                <Button 
+                  size="lg"
+                  variant="primary"
+                  rightIcon={<span aria-hidden="true">→</span>}
+                  aria-label="Get your free property valuation"
+                >
+                  Get Your Free Property Valuation
+                </Button>
+              </motion.div>
             </div>
           </div>
         </div>
