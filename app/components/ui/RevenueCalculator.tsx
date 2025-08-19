@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MapPin, Home, Calculator, TrendingUp } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "./Button";
@@ -72,39 +72,41 @@ export default function RevenueCalculator() {
     "Luxury Furnished": 1.2,
   };
 
-  const calculateRevenue = () => {
-    if (!area || !bedrooms || !furnishing) return null;
+  const calculateRevenue = (areaValue: string, bedroomsValue: string, furnishingValue: string) => {
+    if (!areaValue || !bedroomsValue || !furnishingValue) return null;
 
-    const baseRate = baseRates[area] || 8000;
+    const baseRate = baseRates[areaValue] || 8000;
     const calculatedRevenue = Math.round(
-      baseRate * bedroomMultiplier[bedrooms] * furnishingMultiplier[furnishing],
+      baseRate * bedroomMultiplier[bedroomsValue] * furnishingMultiplier[furnishingValue],
     );
 
     return calculatedRevenue;
   };
 
-  // Auto-calculate and animate when fields change
-  useEffect(() => {
-    const newResult = calculateRevenue();
+  const updateCalculation = (newArea: string, newBedrooms: string, newFurnishing: string) => {
+    const newResult = calculateRevenue(newArea, newBedrooms, newFurnishing);
     if (newResult !== null) {
       setResult(newResult);
-      // Animate the number
-      setAnimatedValue(0);
-      const timer = setTimeout(() => setAnimatedValue(newResult), 100);
-      return () => clearTimeout(timer);
+      setAnimatedValue(newResult);
     } else {
       setResult(null);
       setAnimatedValue(0);
     }
-  }, [area, bedrooms, furnishing]);
+  };
 
-  // Progress calculation for visual feedback
-  const getProgress = () => {
-    let progress = 0;
-    if (area) progress += 33.33;
-    if (bedrooms) progress += 33.33;
-    if (furnishing) progress += 33.34;
-    return progress;
+  const handleAreaChange = (newArea: string) => {
+    setArea(newArea);
+    updateCalculation(newArea, bedrooms, furnishing);
+  };
+
+  const handleBedroomsChange = (newBedrooms: string) => {
+    setBedrooms(newBedrooms);
+    updateCalculation(area, newBedrooms, furnishing);
+  };
+
+  const handleFurnishingChange = (newFurnishing: string) => {
+    setFurnishing(newFurnishing);
+    updateCalculation(area, bedrooms, newFurnishing);
   };
 
   // Get area tier for visual feedback
@@ -174,7 +176,7 @@ export default function RevenueCalculator() {
                     <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <select
                       value={area}
-                      onChange={(e) => setArea(e.target.value)}
+                      onChange={(e) => handleAreaChange(e.target.value)}
                       className="w-full pl-10 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 transition-all duration-300 hover:shadow-md"
                     >
                       <option value="">Select Area</option>
@@ -216,7 +218,7 @@ export default function RevenueCalculator() {
                     <Home className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <select
                       value={bedrooms}
-                      onChange={(e) => setBedrooms(e.target.value)}
+                      onChange={(e) => handleBedroomsChange(e.target.value)}
                       className="w-full pl-10 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 transition-all duration-300 hover:shadow-md"
                     >
                       <option value="">Select Bedrooms</option>
@@ -246,7 +248,7 @@ export default function RevenueCalculator() {
                       return (
                         <motion.button
                           key={option}
-                          onClick={() => setFurnishing(option)}
+                          onClick={() => handleFurnishingChange(option)}
                           className={`py-3 px-4 rounded-lg border text-sm font-medium text-center transition-all ${
                             isSelected
                               ? "border-blue-500 bg-blue-50 text-blue-700"
@@ -350,7 +352,6 @@ export default function RevenueCalculator() {
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: 0.3 }}
                             >
-                              <Sofa className="w-4 h-4 text-blue-600" />
                               <span className="text-sm font-medium">
                                 {furnishing}
                               </span>

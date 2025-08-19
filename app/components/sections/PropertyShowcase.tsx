@@ -14,7 +14,7 @@ export default function PropertyShowcase() {
       properties: "35+ Properties",
       description: "Iconic skyline views & luxury living",
       image:
-        "https://demo1.angelostone.ca/wp-content/uploads/2025/04/591290662.jpg",
+        "https://bookingenginecdn.hostaway.com/listing/82948-298788-O--o5Vzz6y3zdfaqCydqLI7XRAJfJqarNICSVjfmIrqk-6734c3055c817?width=1280&quality=70&format=webp&v=2",
       features: [
         "Burj Khalifa Views",
         "Dubai Mall Access",
@@ -103,8 +103,8 @@ export default function PropertyShowcase() {
                 <Image
                   src={dubaiAreas[0].image}
                   alt={dubaiAreas[0].name}
-                  width={500}
-                  height={300}
+                  width={1000}
+                  height={500}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
