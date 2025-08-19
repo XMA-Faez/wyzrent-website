@@ -13,6 +13,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "bookingenginecdn.hostaway.com",
+      },
+      {
+        protocol: "https",
+        hostname: "demo1.angelostone.ca",
+      },
     ],
   }
 };

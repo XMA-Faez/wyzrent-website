@@ -14,7 +14,7 @@ export default function PropertyShowcase() {
       properties: "35+ Properties",
       description: "Iconic skyline views & luxury living",
       image:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://demo1.angelostone.ca/wp-content/uploads/2025/04/591290662.jpg",
       features: [
         "Burj Khalifa Views",
         "Dubai Mall Access",
@@ -34,7 +34,7 @@ export default function PropertyShowcase() {
       properties: "15+ Properties",
       description: "Exclusive island living & beach resorts",
       image:
-        "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://bookingenginecdn.hostaway.com/listing/82948-255593-MsRkoXKdJJs53yrdyi1DXCJNfXBVObI8jhg3CofcE8E-6734c323a737f?width=1280&quality=70&format=webp&v=2",
       features: ["Private Beaches", "Luxury Resorts", "Atlantis Views"],
     },
     {
@@ -42,23 +42,23 @@ export default function PropertyShowcase() {
       properties: "22+ Properties",
       description: "Modern business hub & canal views",
       image:
-        "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://bookingenginecdn.hostaway.com/listing/82948-304877-sQSjQroLqCQyJL47aFh1Z1cv5POQor2rWXUuW3I8PHc-6734c3422e004?width=1280&quality=70&format=webp&v=2",
       features: ["Canal Views", "Business District", "Modern Architecture"],
     },
     {
-      name: "JBR & JLT",
+      name: "JBR",
       properties: "18+ Properties",
       description: "Beachfront paradise & lakeside towers",
       image:
-        "https://images.unsplash.com/photo-1580041065738-e72023775cdc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://bookingenginecdn.hostaway.com/listing/82948-371971-DERgtzLVve--2t2z30E7OB1pmd5OXgB8vbTkwM8DHxvM-67d8c8f0076b6?width=1280&quality=70&format=webp&v=2",
       features: ["Beach Living", "The Walk", "Family Friendly"],
     },
     {
-      name: "DIFC",
+      name: "City Walk",
       properties: "12+ Properties",
-      description: "Financial district & art galleries",
+      description: "Trendy urban living & shopping district",
       image:
-        "https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://bookingenginecdn.hostaway.com/listing/82948-311704-OjApzMULn7woaqPC4fsA8xtgLC7ccq--59EqcQBwpSSo-6734c07a81135?width=1280&quality=70&format=webp&v=2",
       features: ["Gate Avenue", "Art Galleries", "Fine Dining"],
     },
   ];

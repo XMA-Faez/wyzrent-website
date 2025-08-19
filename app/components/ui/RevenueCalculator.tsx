@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MapPin, Home, Sofa, Calculator, TrendingUp } from "lucide-react";
+import { MapPin, Home, Calculator, TrendingUp } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "./Button";
 
@@ -34,7 +34,7 @@ export default function RevenueCalculator() {
 
   const furnishingOptions = [
     "Unfurnished",
-    "Semi-Furnished",
+    "Semi-Furnished", 
     "Fully Furnished",
     "Luxury Furnished",
   ];
@@ -247,19 +247,14 @@ export default function RevenueCalculator() {
                         <motion.button
                           key={option}
                           onClick={() => setFurnishing(option)}
-                          className={`p-4 rounded-xl border-2 text-sm font-medium ${
+                          className={`py-3 px-4 rounded-lg border text-sm font-medium text-center transition-all ${
                             isSelected
                               ? "border-blue-500 bg-blue-50 text-blue-700"
-                              : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:shadow-sm"
+                              : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50"
                           }`}
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                         >
-                          <Sofa
-                            className={`w-5 h-5 mx-auto mb-2 ${
-                              isSelected ? "text-blue-600" : "text-gray-400"
-                            }`}
-                          />
                           {option}
                         </motion.button>
                       );
