@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <div className="pt-20 p-4 md:pt-40 md:p-6 lg:p-8 lg:pt-24">
       <motion.section 
-        className="relative h-[70vh] md:h-[80vh] overflow-hidden rounded-xl"
+        className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden rounded-xl"
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
@@ -46,7 +46,7 @@ export default function Hero() {
           <div className="container mx-auto px-6 lg:px-8 pb-12 lg:pb-16">
             <div className="max-w-2xl">
               <motion.h1 
-                className="text-5xl lg:text-6xl font-bold text-white leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
@@ -54,7 +54,7 @@ export default function Hero() {
                 Turn Your Dubai Property Into a 5-Star Revenue Machine
               </motion.h1>
               <motion.p 
-                className="text-xl text-white/90 mt-6 leading-relaxed"
+                className="text-base sm:text-lg md:text-xl text-white/90 mt-4 sm:mt-6 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
@@ -62,25 +62,25 @@ export default function Hero() {
                 Average 35% higher returns than traditional rentals. Superhost management with 4.9★ guest ratings.
               </motion.p>
               <motion.div 
-                className="flex flex-wrap gap-4 mt-6"
+                className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
               >
-                <span className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full text-white/95">
-                  <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                <span className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm text-white/95">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   Licensed by Dubai Tourism
                 </span>
-                <span className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full text-white/95">
-                  <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                <span className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm text-white/95">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   110+ Luxury Properties
                 </span>
-                <span className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full text-white/95">
-                  <svg className="w-5 h-5 text-rose-400" fill="currentColor" viewBox="0 0 20 20">
+                <span className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm text-white/95">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-rose-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   Airbnb Superhost
@@ -90,7 +90,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
-                className="mt-8"
+                className="mt-6 sm:mt-8"
               >
                 <Button 
                   size="lg"

@@ -66,7 +66,7 @@ export default function OwnerTestimonials() {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        className={`w-4 h-4 ${
+        className={`w-3.5 h-3.5 ${
           index < rating ? "text-yellow-400 fill-current" : "text-gray-300"
         }`}
       />
@@ -76,7 +76,7 @@ export default function OwnerTestimonials() {
   // Animated counter hook
 
   return (
-    <section className="py-24 px-4 md:px-6 lg:px-8 bg-gray-50 overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 px-4 md:px-6 lg:px-8 bg-gray-50 overflow-hidden">
       <motion.div
         className="container mx-auto max-w-7xl"
         initial={{ opacity: 0, y: 20 }}
@@ -85,9 +85,9 @@ export default function OwnerTestimonials() {
         viewport={{ once: true }}
       >
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.h2
-            className="text-4xl lg:text-6xl font-bold text-black mb-6"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-black mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -96,7 +96,7 @@ export default function OwnerTestimonials() {
             What Our Owners Say
           </motion.h2>
           <motion.p
-            className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -150,7 +150,7 @@ function TestimonialCard({
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        className={`w-4 h-4 ${
+        className={`w-3.5 h-3.5 ${
           index < rating ? "text-yellow-400 fill-current" : "text-gray-300"
         }`}
       />
@@ -159,7 +159,7 @@ function TestimonialCard({
 
   return (
     <motion.div
-      className="flex-shrink-0 w-96 bg-white rounded-2xl p-6 shadow-lg border border-gray-200 mx-4"
+      className="flex-shrink-0 w-72 sm:w-80 bg-white rounded-2xl p-5 shadow-lg border border-gray-200 mx-3"
       whileHover={{
         y: -5,
         boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
@@ -167,21 +167,21 @@ function TestimonialCard({
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       {/* Quote Icon */}
-      <div className="flex justify-between items-start mb-4">
-        <div className="flex items-center gap-1">
+      <div className="flex justify-between items-start mb-3">
+        <div className="flex items-center gap-0.5">
           {renderStars(testimonial.rating)}
         </div>
-        <Quote className="w-8 h-8 text-blue-600 opacity-20" />
+        <Quote className="w-6 h-6 text-blue-600 opacity-20" />
       </div>
 
       {/* Testimonial Text */}
-      <p className="text-gray-700 leading-relaxed mb-6 text-sm whitespace-break-spaces">
+      <p className="text-gray-700 leading-relaxed mb-4 text-sm whitespace-break-spaces">
         "{testimonial.text}"
       </p>
 
       {/* Author */}
-      <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-xs">
           {testimonial.name
             .split(" ")
             .map((n) => n[0])

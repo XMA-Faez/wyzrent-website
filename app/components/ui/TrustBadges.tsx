@@ -9,14 +9,14 @@ import QualityServiceBadge from "@/public/quality-service-bg-removed.png";
 export default function TrustBadges() {
   return (
     <motion.section
-      className="px-4 md:px-6 lg:px-10 py-16"
+      className="px-4 md:px-6 lg:px-10 py-12 sm:py-16"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
     >
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-16">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-12 md:gap-16">
           {/* Airbnb Superhost Badge */}
           <motion.div
             className="flex items-center justify-center"
@@ -28,7 +28,7 @@ export default function TrustBadges() {
             <Image
               src={AirbnbSuperhostBadge}
               alt="Airbnb Superhost"
-              className="h-24 w-auto"
+              className="h-20 sm:h-24 w-auto"
             />
           </motion.div>
 
@@ -45,7 +45,7 @@ export default function TrustBadges() {
               <Image src={Feather} alt="Laurel" className="opacity-70 w-8" />
 
               {/* Rating */}
-              <div className="text-5xl font-bold text-black pb-4">4.92</div>
+              <div className="text-4xl sm:text-5xl font-bold text-black pb-2 sm:pb-4">4.92</div>
 
               {/* Right Laurel */}
               <Image
@@ -78,7 +78,7 @@ export default function TrustBadges() {
             <Image
               src={QualityServiceBadge}
               alt="Quality Service Badge"
-              className="h-32 w-auto"
+              className="h-24 sm:h-28 md:h-32 w-auto"
             />
           </motion.div>
         </div>

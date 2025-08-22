@@ -64,20 +64,20 @@ export default function PropertyShowcase() {
   ];
 
   return (
-    <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
             Properties Across Dubai
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             From beachfront luxury to downtown sophistication, we manage premium
             properties in Dubai's most coveted locations
           </p>
@@ -94,7 +94,7 @@ export default function PropertyShowcase() {
             viewport={{ once: true }}
           >
             <div
-              className="group relative h-full min-h-[500px] rounded-2xl overflow-hidden"
+              className="group relative h-full min-h-[350px] sm:min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden"
               onMouseEnter={() => setHoveredArea("Downtown Dubai")}
               onMouseLeave={() => setHoveredArea(null)}
             >

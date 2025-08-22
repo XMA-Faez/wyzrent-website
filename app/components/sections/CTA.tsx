@@ -7,7 +7,7 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="relative py-24 px-4 md:px-6 lg:px-8 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-24 px-4 md:px-6 lg:px-8 overflow-hidden"
     >
       {/* Background Image */}
       <div
@@ -22,7 +22,7 @@ export default function CTA() {
       <div className="relative z-10 container mx-auto max-w-4xl text-center">
         {/* Main Heading */}
         <motion.h2
-          className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

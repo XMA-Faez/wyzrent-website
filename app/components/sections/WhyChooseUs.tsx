@@ -43,27 +43,27 @@ export default function WhyChooseUs() {
   return (
     <section
       id="about"
-      className="py-20 px-4 md:px-6 lg:px-8 bg-gray-50 overflow-hidden"
+      className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-gray-50 overflow-hidden"
     >
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
             Why Choose WYZRENT?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We're property owners ourselves, bringing a personal touch to professional management
           </p>
         </motion.div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 gap-12 mb-16 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16 max-w-5xl mx-auto">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -93,8 +93,8 @@ export default function WhyChooseUs() {
                   </motion.div>
                   
                   {/* Content */}
-                  <h3 className="text-xl font-semibold text-black mb-3">{benefit.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-black mb-3">{benefit.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{benefit.description}</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -134,15 +134,15 @@ export default function WhyChooseUs() {
 
         {/* Stats Section */}
         <motion.div
-          className="mt-20 bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 lg:p-12"
+          className="mt-12 sm:mt-16 bg-gradient-to-br from-white to-gray-50 rounded-3xl p-6 sm:p-8 lg:p-10"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             <StatCard
-              icon={<RiBuilding2Fill className="w-8 h-8 fill-teal-600 text-teal-600" />}
+              icon={<RiBuilding2Fill className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 fill-teal-600 text-teal-600" />}
               value={110}
               suffix="+"
               label="Luxury Apartments"
@@ -150,7 +150,7 @@ export default function WhyChooseUs() {
               bgColor="bg-white"
             />
             <StatCard
-              icon={<FaUser className="w-8 h-8 text-blue-600" />}
+              icon={<FaUser className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-blue-600" />}
               value={1500}
               suffix="+"
               label="Satisfied Reviews"
@@ -158,7 +158,7 @@ export default function WhyChooseUs() {
               bgColor="bg-white"
             />
             <StatCard
-              icon={<Heart className="w-8 h-8 fill-rose-500 text-rose-500" />}
+              icon={<Heart className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 fill-rose-500 text-rose-500" />}
               value={7}
               suffix="+"
               label="Years of Operation"
@@ -166,7 +166,7 @@ export default function WhyChooseUs() {
               bgColor="bg-white"
             />
             <StatCard
-              icon={<Star className="w-8 h-8 fill-yellow-500 text-yellow-500" />}
+              icon={<Star className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 fill-yellow-500 text-yellow-500" />}
               value={4.9}
               decimalPlaces={1}
               label="Star Guest Rating"
@@ -199,7 +199,7 @@ function StatCard({
 }) {
   return (
     <motion.div
-      className={`text-center p-6 rounded-2xl ${bgColor} border border-white/50 shadow-sm hover:shadow-md transition-shadow`}
+      className={`text-center p-4 sm:p-5 rounded-2xl ${bgColor} border border-white/50 shadow-sm hover:shadow-md transition-shadow`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{
         opacity: 1,
@@ -209,16 +209,16 @@ function StatCard({
       viewport={{ once: true }}
     >
       <motion.div
-        className="flex justify-center mb-4"
+        className="flex justify-center mb-3"
         whileHover={{ scale: 1.1, rotate: 5 }}
         transition={{ duration: 0.3 }}
       >
         {icon}
       </motion.div>
-      <div className="text-4xl lg:text-5xl font-bold text-black mb-2">
+      <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-1.5">
         <NumberTicker value={value} decimalPlaces={decimalPlaces} suffix={suffix} />
       </div>
-      <div className="text-gray-600 font-medium">{label}</div>
+      <div className="text-sm sm:text-base text-gray-600 font-medium">{label}</div>
     </motion.div>
   );
 }

@@ -37,16 +37,16 @@ const buttonVariants = cva(
       },
       size: {
         // Small button - compact actions
-        sm: "text-sm px-4 py-2 rounded-full",
+        sm: "text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full",
         
         // Default button - standard actions
-        default: "text-base px-6 py-3 rounded-full",
+        default: "text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3 rounded-full",
         
         // Large button - prominent CTAs
-        lg: "text-lg px-8 py-4 rounded-full",
+        lg: "text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full",
         
         // Icon only button
-        icon: "w-10 h-10 rounded-full",
+        icon: "w-8 h-8 sm:w-10 sm:h-10 rounded-full",
       },
       loading: {
         true: "cursor-not-allowed",

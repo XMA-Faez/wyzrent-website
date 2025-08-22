@@ -118,7 +118,7 @@ export default function RevenueCalculator() {
   };
 
   return (
-    <section className="py-20 px-4 md:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8">
       <motion.div
         className="container mx-auto"
         initial={{ opacity: 0, y: 20 }}
@@ -127,17 +127,17 @@ export default function RevenueCalculator() {
         viewport={{ once: true }}
       >
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-6xl font-bold text-black mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-black mb-4 sm:mb-6">
               Estimate Your Revenue
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Calculate your potential monthly income from luxury short-term
               rentals in Dubai
             </p>
