@@ -1,0 +1,49 @@
+/* Custom styling for react-international-phone */
+
+/* Main phone input container */
+.react-international-phone-input-container {
+  @apply flex w-full border border-gray-300 rounded-lg bg-white focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 transition-all;
+}
+
+/* Country selector button */
+.react-international-phone-country-selector-button {
+  @apply flex items-center px-3 py-3 border-r border-gray-200 bg-white hover:bg-gray-50 focus:bg-gray-50 transition-colors rounded-l-lg;
+}
+
+/* Country flag */
+.react-international-phone-flag-emoji {
+  @apply text-lg mr-2;
+}
+
+/* Dropdown arrow */
+.react-international-phone-dropdown-arrow {
+  @apply text-gray-400 ml-1;
+}
+
+/* Phone number input */
+.react-international-phone-input {
+  @apply flex-1 px-4 py-3 border-0 bg-transparent focus:outline-none focus:ring-0 text-gray-900 placeholder-gray-400 rounded-r-lg;
+}
+
+/* Country dropdown */
+.react-international-phone-dropdown-container {
+  @apply mt-1 bg-white border border-gray-300 rounded-lg shadow-lg z-50 max-h-48 overflow-y-auto;
+}
+
+/* Country dropdown items */
+.react-international-phone-country-selector-dropdown__list-item {
+  @apply px-4 py-2 hover:bg-blue-50 cursor-pointer flex items-center;
+}
+
+.react-international-phone-country-selector-dropdown__list-item:hover {
+  @apply bg-blue-50;
+}
+
+.react-international-phone-country-selector-dropdown__list-item--selected {
+  @apply bg-blue-100;
+}
+
+/* Dial code preview */
+.react-international-phone-dial-code-preview {
+  @apply text-gray-500 text-sm;
+}

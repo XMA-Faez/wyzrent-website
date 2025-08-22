@@ -1,4 +1,13 @@
-import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook } from 'lucide-react';
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Instagram,
+  Linkedin,
+  Facebook,
+} from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,13 +16,16 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="lg:col-span-2">
-            <img 
+            <Image 
               src="/logo.png" 
               alt="WYZRENT" 
-              className="h-10 mb-4"
+              width={360}
+              height={100}
+              className="h-10 w-auto mb-4" 
             />
             <p className="text-gray-600 leading-relaxed max-w-md">
-              Luxury short-term rental management in Dubai. We maximize your property's revenue while providing exceptional guest experiences.
+              Luxury short-term rental management in Dubai. We maximize your
+              property's revenue while providing exceptional guest experiences.
             </p>
           </div>
 
@@ -21,11 +33,38 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-black mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">Home</a></li>
-              <li><a href="#services" className="text-gray-600 hover:text-blue-600 transition-colors">Services</a></li>
-              <li><a href="#revenue" className="text-gray-600 hover:text-blue-600 transition-colors">Estimate Revenue</a></li>
-              <li><a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors">About Us</a></li>
-              <li><a href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">Contact</a></li>
+              <li>
+                <Link
+                  href="/"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#services"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about-us"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact-us"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -39,7 +78,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-600">
                 <Phone className="w-4 h-4 text-blue-600" />
-                <span className="text-sm">+971 XX XXX XXXX</span>
+                <span className="text-sm">+971 50 123 4567</span>
               </div>
               <div className="flex items-center gap-3 text-gray-600">
                 <Mail className="w-4 h-4 text-blue-600" />
@@ -54,16 +93,25 @@ export default function Footer() {
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} WYZRENT. All rights reserved
           </p>
-          
+
           {/* Social Links */}
           <div className="flex items-center gap-4 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-blue-600 transition-colors"
+            >
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-blue-600 transition-colors"
+            >
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-blue-600 transition-colors"
+            >
               <Facebook className="w-5 h-5" />
             </a>
           </div>

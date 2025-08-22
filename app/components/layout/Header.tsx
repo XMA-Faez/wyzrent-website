@@ -9,10 +9,10 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', href: '/' },
     { name: 'Services', href: '#services' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact Us', href: '#contact' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Contact Us', href: '/contact-us' },
     { name: 'Book Your Stay', href: 'https://wyzrent.holidayfuture.com/' },
   ];
 
@@ -35,6 +35,17 @@ export default function Header() {
         });
       }
     }
+  };
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      scrollToSection(href);
+    } else if (href.startsWith('/')) {
+      // Let Next.js handle internal routing
+      window.location.href = href;
+    }
+    // External links will open normally
   };
 
   return (
@@ -75,12 +86,7 @@ export default function Header() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                onClick={(e) => {
-                  if (item.href.startsWith('#')) {
-                    e.preventDefault();
-                    scrollToSection(item.href);
-                  }
-                }}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -143,10 +149,7 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={(e) => {
-                      if (item.href.startsWith('#')) {
-                        e.preventDefault();
-                        scrollToSection(item.href);
-                      }
+                      handleNavClick(e, item.href);
                       setIsMenuOpen(false);
                     }}
                     className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2"
