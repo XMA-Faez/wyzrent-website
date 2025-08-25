@@ -13,7 +13,7 @@ export default function LocationMap() {
     {
       icon: Clock,
       title: "Office Hours",
-      details: ["Sunday - Thursday: 9:00 AM - 6:00 PM", "Friday - Saturday: Closed", "Emergency: 24/7 Available"]
+      details: ["Sunday - Thursday: 9:00 AM - 6:00 PM", "Friday - Saturday: Closed"]
     },
     {
       icon: Car,

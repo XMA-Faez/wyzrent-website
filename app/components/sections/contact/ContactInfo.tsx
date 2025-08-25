@@ -144,29 +144,6 @@ export default function ContactInfo() {
               ))}
             </div>
           </motion.div>
-
-          {/* Emergency Contact */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 text-center bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-6 border border-red-100"
-          >
-            <h4 className="text-lg font-bold text-gray-900 mb-2">
-              24/7 Emergency Support
-            </h4>
-            <p className="text-gray-600 mb-3">
-              For urgent property issues or guest emergencies
-            </p>
-            <a 
-              href="tel:+971501234567" 
-              className="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              +971 50 123 4567
-            </a>
-          </motion.div>
         </div>
       </div>
     </section>

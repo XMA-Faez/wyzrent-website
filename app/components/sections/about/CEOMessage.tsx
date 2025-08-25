@@ -73,10 +73,10 @@ export default function CEOMessage() {
             >
               <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 md:p-10 relative">
                 {/* Quote Icon */}
-                <Quote className="absolute top-8 left-8 w-12 h-12 text-blue-200" />
+                <Quote className="absolute top-6 left-6 w-10 h-10 text-blue-200/50" />
                 
-                <div className="relative z-10 space-y-4 text-gray-700 leading-relaxed">
-                  <p className="text-lg first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 first-letter:mr-1 first-letter:float-left">
+                <div className="relative z-10 space-y-4 text-gray-700 leading-relaxed pl-8">
+                  <p className="text-lg first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 first-letter:mr-1 first-letter:float-left first-letter:leading-[0.9] first-letter:font-serif">
                     At WYZ Rent, we treat every apartment as if it were our own, valuing the trust 
                     that our property owners place in us. We foster a family environment where every 
                     property is cherished and cared for with utmost dedication. Our commitment is to 

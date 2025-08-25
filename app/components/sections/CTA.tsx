@@ -58,7 +58,7 @@ export default function CTA() {
             viewport={{ once: true }}
           >
             <MessageCircle className="w-5 h-5 text-emerald-300" />
-            <span className="text-lg text-white">24/7 Online Support</span>
+            <span className="text-lg text-white">Online Support</span>
           </motion.div>
         </motion.div>
 
