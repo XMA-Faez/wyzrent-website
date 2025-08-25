@@ -10,7 +10,7 @@ export default function Header() {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '#services' },
+    { name: 'Services', href: '/#services' },
     { name: 'About Us', href: '/about-us' },
     { name: 'Contact Us', href: '/contact-us' },
     { name: 'Book Your Stay', href: 'https://wyzrent.holidayfuture.com/' },
