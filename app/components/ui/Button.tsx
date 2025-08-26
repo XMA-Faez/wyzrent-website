@@ -84,11 +84,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }, ref) => {
     return (
       <motion.button
-        className={cn(buttonVariants({ variant, size, loading, className }))}
+        className={cn(buttonVariants({ variant, size, loading, className }), "active:scale-98 transition-transform duration-200")}
         ref={ref}
         disabled={disabled || loading}
-        whileTap={{ scale: 0.98 }}
-        transition={{ duration: 0.2 }}
         {...props}
       >
         {loading ? (

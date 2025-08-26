@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function Header() {
@@ -37,15 +37,19 @@ export default function Header() {
     }
   };
 
-  const handleNavClick = (e: React.MouseEvent, href: string) => {
+  const handleNavClick = (e: React.MouseEvent, href: string, itemName: string) => {
     if (href.startsWith('#')) {
       e.preventDefault();
       scrollToSection(href);
     } else if (href.startsWith('/')) {
       // Let Next.js handle internal routing
       window.location.href = href;
+    } else if (itemName === 'Book Your Stay') {
+      // Open external booking link in new tab
+      e.preventDefault();
+      window.open(href, '_blank', 'noopener,noreferrer');
     }
-    // External links will open normally
+    // Other external links will open normally
   };
 
   return (
@@ -86,7 +90,7 @@ export default function Header() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
+                onClick={(e) => handleNavClick(e, item.href, item.name)}
                 className={
                   item.name === 'Book Your Stay'
                     ? "bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
@@ -96,7 +100,12 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
               >
-                {item.name}
+                <span className="flex items-center gap-2">
+                  {item.name}
+                  {item.name === 'Book Your Stay' && (
+                    <ExternalLink className="w-4 h-4" />
+                  )}
+                </span>
                 {item.name !== 'Book Your Stay' && (
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                 )}
@@ -106,12 +115,11 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden p-2"
+            className="md:hidden p-2 active:scale-95 transition-transform duration-150"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            whileTap={{ scale: 0.95 }}
           >
             <AnimatePresence mode="wait">
               {isMenuOpen ? (
@@ -155,7 +163,7 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={(e) => {
-                      handleNavClick(e, item.href);
+                      handleNavClick(e, item.href, item.name);
                       setIsMenuOpen(false);
                     }}
                     className={
@@ -167,7 +175,12 @@ export default function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    {item.name}
+                    <span className="flex items-center justify-center gap-2">
+                      {item.name}
+                      {item.name === 'Book Your Stay' && (
+                        <ExternalLink className="w-4 h-4" />
+                      )}
+                    </span>
                   </motion.a>
                 ))}
               </nav>

@@ -87,14 +87,12 @@ export default function WhyChooseUs() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <motion.div 
-                className="p-6 bg-gradient-to-br from-white via-gray-50/30 to-white rounded-xl border border-gray-200 shadow-sm group-hover:shadow-xl group-hover:border-blue-200/50 transition-all duration-300 h-full backdrop-blur-sm"
-                whileHover={{ y: -2 }}
+                className="p-6 bg-gradient-to-br from-white via-gray-50/30 to-white rounded-xl border border-gray-200 shadow-sm group-hover:shadow-xl group-hover:border-blue-200/50 transition-all duration-300 h-full backdrop-blur-sm hover:-translate-y-0.5"
               >
                 <div className="text-center">
                   {/* Icon */}
                   <motion.div 
-                    className={`inline-flex p-3 ${benefit.bgColor} rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300`}
-                    whileHover={{ rotate: 5 }}
+                    className={`inline-flex p-3 ${benefit.bgColor} rounded-lg mb-4 group-hover:scale-105 hover:rotate-1 transition-transform duration-300`}
                   >
                     <div className={benefit.color}>
                       {benefit.icon}
@@ -174,9 +172,7 @@ function StatCard({
       viewport={{ once: true }}
     >
       <motion.div
-        className="flex justify-center mb-3"
-        whileHover={{ scale: 1.1, rotate: 5 }}
-        transition={{ duration: 0.3 }}
+        className="flex justify-center mb-3 hover:scale-110 hover:rotate-1 transition-transform duration-300"
       >
         {icon}
       </motion.div>

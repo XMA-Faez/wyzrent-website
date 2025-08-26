@@ -96,7 +96,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="bg-gradient-to-br from-white via-gray-50/30 to-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-200 hover:border-blue-200/50 transition-all duration-300"
+              className="bg-gradient-to-br from-white via-gray-50/30 to-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-200 hover:border-blue-200/50"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}

@@ -60,9 +60,7 @@ export default function WhatsAppWidget() {
         {/* Main Button */}
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 group"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 group hover:scale-110 active:scale-95"
           aria-label="Open WhatsApp chat"
         >
           <svg

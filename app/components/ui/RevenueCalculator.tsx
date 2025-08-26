@@ -258,13 +258,11 @@ export default function RevenueCalculator() {
                         <motion.button
                           key={option}
                           onClick={() => handleFurnishingChange(option)}
-                          className={`py-3 px-4 rounded-lg border text-sm font-medium text-center transition-all ${
+                          className={`py-3 px-4 rounded-lg border text-sm font-medium text-center transition-all hover:scale-102 active:scale-98 ${
                             isSelected
                               ? "border-blue-500 bg-blue-50 text-blue-700"
                               : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50"
                           }`}
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
                         >
                           {option}
                         </motion.button>

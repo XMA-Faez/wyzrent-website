@@ -168,12 +168,7 @@ function TestimonialCard({
 
   return (
     <motion.div
-      className="flex-shrink-0 w-72 sm:w-80 bg-gradient-to-br from-white via-gray-50/30 to-white rounded-2xl p-5 shadow-lg border border-gray-200 hover:border-blue-200/50 mx-3 transition-all duration-300"
-      whileHover={{
-        y: -5,
-        boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-      }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="flex-shrink-0 w-72 sm:w-80 bg-gradient-to-br from-white via-gray-50/30 to-white rounded-2xl p-5 shadow-lg border border-gray-200 hover:border-blue-200/50 mx-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
     >
       {/* Quote Icon */}
       <div className="flex justify-between items-start mb-3">
