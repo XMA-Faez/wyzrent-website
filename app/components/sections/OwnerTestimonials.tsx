@@ -86,8 +86,17 @@ export default function OwnerTestimonials() {
       >
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
+          <motion.span
+            className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            viewport={{ once: true }}
+          >
+            Owner Testimonials
+          </motion.span>
           <motion.h2
-            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-black mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -96,7 +105,7 @@ export default function OwnerTestimonials() {
             What Our Owners Say
           </motion.h2>
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -159,7 +168,7 @@ function TestimonialCard({
 
   return (
     <motion.div
-      className="flex-shrink-0 w-72 sm:w-80 bg-white rounded-2xl p-5 shadow-lg border border-gray-200 mx-3"
+      className="flex-shrink-0 w-72 sm:w-80 bg-gradient-to-br from-white via-gray-50/30 to-white rounded-2xl p-5 shadow-lg border border-gray-200 hover:border-blue-200/50 mx-3 transition-all duration-300"
       whileHover={{
         y: -5,
         boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
@@ -188,10 +197,10 @@ function TestimonialCard({
             .join("")}
         </div>
         <div>
-          <div className="font-semibold text-black text-sm">
+          <div className="font-bold text-sm bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
             {testimonial.name}
           </div>
-          <div className="text-xs text-gray-500">
+          <div className="text-xs font-medium bg-gradient-to-r from-gray-500 to-gray-600 bg-clip-text text-transparent">
             {testimonial.location} • {testimonial.property.split(" ").pop()}
           </div>
         </div>

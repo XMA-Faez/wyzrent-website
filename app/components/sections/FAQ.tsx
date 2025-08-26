@@ -62,8 +62,17 @@ export default function FAQ() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.3 }}
         >
+          <motion.span
+            className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Knowledge Base
+          </motion.span>
           <motion.h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -72,7 +81,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </motion.h2>
           <motion.p 
-            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -87,7 +96,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="bg-gradient-to-br from-white via-gray-50/30 to-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-200 hover:border-blue-200/50 transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
@@ -97,7 +106,7 @@ export default function FAQ() {
                 className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-100 transition-colors duration-200"
                 onClick={() => toggleQuestion(index)}
               >
-                <h3 className="text-lg font-semibold text-black pr-4">
+                <h3 className="text-lg font-bold pr-4 bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
                   {faq.question}
                 </h3>
                 {openIndex === index ? (
@@ -145,7 +154,7 @@ export default function FAQ() {
           viewport={{ once: true }}
         >
           <motion.p 
-            className="text-gray-600 mb-6"
+            className="font-medium mb-6 bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}

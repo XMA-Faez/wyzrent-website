@@ -134,10 +134,19 @@ export default function RevenueCalculator() {
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-black mb-4 sm:mb-6">
+            <motion.span
+              className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              viewport={{ once: true }}
+            >
+              Revenue Calculator
+            </motion.span>
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
               Estimate Your Revenue
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium">
               Calculate your potential monthly income from luxury short-term
               rentals in Dubai
             </p>
@@ -156,7 +165,7 @@ export default function RevenueCalculator() {
             >
               <div className="flex items-center gap-3 mb-8">
                 <Calculator className="w-6 h-6 text-blue-600" />
-                <h3 className="text-2xl font-semibold text-black">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
                   Property Details
                 </h3>
               </div>
@@ -275,10 +284,10 @@ export default function RevenueCalculator() {
               viewport={{ once: true }}
             >
               <div className="sticky top-8">
-                <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-xl border border-gray-200">
+                <div className="bg-gradient-to-br from-white via-gray-50/30 to-white rounded-3xl p-8 shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300">
                   <div className="flex items-center gap-3 mb-8">
                     <TrendingUp className="w-6 h-6 text-green-600" />
-                    <h3 className="text-2xl font-semibold text-black">
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
                       Revenue Estimate
                     </h3>
                   </div>

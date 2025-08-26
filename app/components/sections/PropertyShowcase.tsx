@@ -74,10 +74,19 @@ export default function PropertyShowcase() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
+          <motion.span
+            className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Premium Locations
+          </motion.span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Properties Across Dubai
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium">
             From beachfront luxury to downtown sophistication, we manage premium
             properties in Dubai's most coveted locations
           </p>
@@ -142,10 +151,10 @@ export default function PropertyShowcase() {
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     className=""
                   >
-                    <h3 className="text-3xl mb-2 lg:text-4xl font-bold">
+                    <h3 className="text-3xl mb-2 lg:text-4xl font-bold bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
                       {dubaiAreas[0].name}
                     </h3>
-                    <p className="text-lg text-white/90">
+                    <p className="text-lg font-medium bg-gradient-to-r from-white/95 to-white/80 bg-clip-text text-transparent">
                       {dubaiAreas[0].description}
                     </p>
                   </motion.div>
@@ -223,38 +232,14 @@ export default function PropertyShowcase() {
                       <span className="font-semibold">{area.properties}</span>
                     </motion.div>
 
-                    <h3 className="text-xl font-bold">{area.name}</h3>
-                    <p className="text-sm text-white/90">{area.description}</p>
+                    <h3 className="text-xl font-bold bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">{area.name}</h3>
+                    <p className="text-sm font-medium bg-gradient-to-r from-white/95 to-white/80 bg-clip-text text-transparent">{area.description}</p>
                   </motion.div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Stats Bar */}
-        <motion.div
-          className="mt-16 bg-white border border-gray-200 rounded-2xl p-8 shadow-sm"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <div className="grid grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold mb-2 text-black">130+</div>
-              <div className="text-gray-600">Total Properties</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2 text-black">6</div>
-              <div className="text-gray-600">Prime Locations</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2 text-black">95%</div>
-              <div className="text-gray-600">Occupancy Rate</div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

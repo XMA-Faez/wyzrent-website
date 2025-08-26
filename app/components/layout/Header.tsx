@@ -87,13 +87,19 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
+                className={
+                  item.name === 'Book Your Stay'
+                    ? "bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                    : "text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
+                }
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                {item.name !== 'Book Your Stay' && (
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                )}
               </motion.a>
             ))}
           </motion.nav>
@@ -152,7 +158,11 @@ export default function Header() {
                       handleNavClick(e, item.href);
                       setIsMenuOpen(false);
                     }}
-                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2"
+                    className={
+                      item.name === 'Book Your Stay'
+                        ? "bg-blue-600 text-white px-4 py-2 rounded-lg font-medium text-center hover:bg-blue-700 transition-all duration-200 shadow-md"
+                        : "text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2"
+                    }
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}

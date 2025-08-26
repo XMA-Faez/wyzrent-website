@@ -97,10 +97,19 @@ export default function RentalComparison() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
+          <motion.span
+            className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Rental Comparison
+          </motion.span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Why Short-Term Beats Long-Term
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium">
             Discover how short-term rentals transform your property into a premium income generator
           </p>
         </motion.div>
@@ -110,7 +119,7 @@ export default function RentalComparison() {
           <div className="grid lg:grid-cols-2 gap-0 lg:gap-8">
             {/* Long Term Side */}
             <motion.div
-              className="relative bg-gray-50 rounded-t-2xl lg:rounded-2xl p-8 lg:p-10"
+              className="relative bg-gradient-to-br from-gray-50 via-gray-50/50 to-white rounded-t-2xl lg:rounded-2xl p-8 lg:p-10 border border-gray-200"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -122,10 +131,10 @@ export default function RentalComparison() {
                   <XCircle className="w-6 h-6" />
                   <span className="text-sm font-semibold uppercase tracking-wide">Traditional</span>
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-gray-700 to-gray-800 bg-clip-text text-transparent mb-2">
                   Long-Term Rental
                 </h3>
-                <p className="text-gray-600">The old way limits your potential</p>
+                <p className="font-medium text-gray-600">The old way limits your potential</p>
               </div>
 
               {/* Challenges List */}
@@ -143,7 +152,7 @@ export default function RentalComparison() {
                       {challenge.icon}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">
+                      <h4 className="font-bold bg-gradient-to-r from-gray-700 to-gray-800 bg-clip-text text-transparent mb-1">
                         {challenge.title}
                       </h4>
                       <p className="text-sm text-gray-600">
@@ -173,10 +182,10 @@ export default function RentalComparison() {
                     </div>
                     <span className="text-sm font-semibold uppercase tracking-wide text-white/90">Premium Choice</span>
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2">
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-2 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
                     Short-Term Rental
                   </h3>
-                  <p className="text-white/80">The smart way to maximize returns</p>
+                  <p className="font-medium bg-gradient-to-r from-white/95 to-white/80 bg-clip-text text-transparent">The smart way to maximize returns</p>
                 </div>
 
                 {/* Benefits List */}
@@ -198,10 +207,10 @@ export default function RentalComparison() {
                         </div>
                       </motion.div>
                       <div>
-                        <h4 className="font-semibold text-white mb-1">
+                        <h4 className="font-bold bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-1">
                           {benefit.title}
                         </h4>
-                        <p className="text-sm text-white/70">
+                        <p className="text-sm text-white/80 font-medium">
                           {benefit.description}
                         </p>
                       </div>
@@ -215,7 +224,7 @@ export default function RentalComparison() {
           {/* VS Badge */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:block">
             <motion.div
-              className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center border-4 border-gray-100"
+              className="w-16 h-16 bg-gradient-to-br from-white via-gray-50 to-white rounded-full shadow-xl flex items-center justify-center border-4 border-blue-200/50"
               initial={{ scale: 0, rotate: 0 }}
               whileInView={{ scale: 1, rotate: 360 }}
               transition={{ duration: 0.6, delay: 0.3 }}

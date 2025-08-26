@@ -27,9 +27,14 @@ export default function Hero() {
             className="w-full h-full object-cover"
             poster="/dubai-luxury-property-poster.jpg"
             aria-label="Background video showing luxury Dubai properties"
+            onLoadedMetadata={(e) => {
+              const video = e.currentTarget;
+              // Start video from 50% of its duration
+              video.currentTime = video.duration * 0.7;
+            }}
           >
-            <source src="https://demo1.angelostone.ca/wp-content/uploads/2025/03/Palm-apartments.mp4" type="video/mp4" />
-            <source src="/dubai-luxury-properties.webm" type="video/webm" />
+            <source src="https://demo1.angelostone.ca/wp-content/uploads/2025/03/Palm-apartments.mp4#t=33" type="video/mp4" />
+            <source src="/dubai-luxury-properties.webm#t=35" type="video/webm" />
             Your browser does not support the video tag.
           </video>
           {/* Gradient Overlay */}
@@ -45,8 +50,16 @@ export default function Hero() {
         <div className="relative z-10 flex items-end h-full">
           <div className="container mx-auto px-6 lg:px-8 pb-12 lg:pb-16">
             <div className="max-w-2xl">
+              <motion.span
+                className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-white/90 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-full uppercase"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.15, ease: "easeOut" }}
+              >
+                Dubai's Premium Property Management
+              </motion.span>
               <motion.h1 
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
@@ -54,7 +67,7 @@ export default function Hero() {
                 Turn Your Dubai Property Into a 5-Star Revenue Machine
               </motion.h1>
               <motion.p 
-                className="text-base sm:text-lg md:text-xl text-white/90 mt-4 sm:mt-6 leading-relaxed"
+                className="text-base sm:text-lg md:text-xl mt-4 sm:mt-6 leading-relaxed font-medium bg-gradient-to-r from-white/95 to-white/80 bg-clip-text text-transparent"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}

@@ -20,9 +20,20 @@ export default function CTA() {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 container mx-auto max-w-4xl text-center">
+        {/* Badge */}
+        <motion.span
+          className="inline-block px-4 py-1.5 mb-6 text-xs sm:text-sm font-semibold tracking-wider text-white/90 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-full uppercase"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          Start Your Journey
+        </motion.span>
+        
         {/* Main Heading */}
         <motion.h2
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

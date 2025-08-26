@@ -51,10 +51,20 @@ export default function Services() {
           transition={{ duration: 0.4 }}
           viewport={{ once: true, amount: 0.4 }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <span className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase">
+              Premium Management Solutions
+            </span>
+          </motion.div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Full-Service Property Management
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium">
             From preparation to guest departure, we handle every detail with precision and care
           </p>
         </motion.div>
@@ -75,7 +85,7 @@ export default function Services() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <motion.div 
-                className="p-6 bg-white rounded-xl border border-gray-200 shadow-sm group-hover:shadow-md transition-all duration-300 h-full"
+                className="p-6 bg-gradient-to-br from-white via-gray-50/30 to-white rounded-xl border border-gray-200 shadow-sm group-hover:shadow-xl group-hover:border-blue-200/50 transition-all duration-300 h-full backdrop-blur-sm"
                 whileHover={{ y: -2 }}
               >
                 <div className="flex items-start gap-4">
@@ -91,8 +101,8 @@ export default function Services() {
                   
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-semibold text-black mb-2">{service.title}</h3>
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{service.description}</p>
+                    <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent mb-2 group-hover:from-blue-700 group-hover:to-indigo-700 transition-all duration-300">{service.title}</h3>
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{service.description}</p>
                   </div>
                 </div>
               </motion.div>

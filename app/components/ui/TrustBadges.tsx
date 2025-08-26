@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { Star, Heart, Building2, Users } from "lucide-react";
+import { NumberTicker } from "./NumberTicker";
 import AirbnbSuperhostBadge from "@/public/airbnb-superhost-badge.png";
 import Feather from "@/public/feather.png";
 import FeatherRight from "@/public/feather-right.png";
@@ -9,182 +11,176 @@ import QualityServiceBadge from "@/public/quality-service-bg-removed.png";
 export default function TrustBadges() {
   return (
     <motion.section
-      className="px-4 md:px-6 lg:px-10 py-12 sm:py-16"
+      className="px-4 md:px-6 lg:px-10 py-16 sm:py-20 bg-gradient-to-b from-white via-blue-50/20 to-white"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-6xl">
+        {/* Section Header */}
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.span
+            className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Trust & Excellence
+          </motion.span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">
+            Recognized Excellence in Hospitality
+          </h2>
+          <p className="text-sm sm:text-base max-w-2xl mx-auto bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium">
+            Trusted by leading platforms and thousands of satisfied guests
+          </p>
+        </motion.div>
+
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-12 md:gap-16">
           {/* Airbnb Superhost Badge */}
           <motion.div
-            className="flex items-center justify-center"
+            className="group relative"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Image
-              src={AirbnbSuperhostBadge}
-              alt="Airbnb Superhost"
-              className="h-20 sm:h-24 w-auto"
-            />
+            <div className="relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group-hover:shadow-xl transition-all duration-300">
+              <Image
+                src={AirbnbSuperhostBadge}
+                alt="Airbnb Superhost"
+                className="h-20 sm:h-24 w-auto mx-auto"
+              />
+              <div className="mt-3 text-center">
+                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Certified</div>
+                <div className="text-sm font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">Superhost Status</div>
+              </div>
+            </div>
           </motion.div>
 
           {/* Guest Favorite Badge */}
           <motion.div
-            className="flex flex-col"
+            className="group relative"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center justify-center gap-2">
-              {/* Left Laurel */}
-              <Image src={Feather} alt="Laurel" className="opacity-70 w-8" />
+            <div className="relative bg-gradient-to-br from-white to-white rounded-2xl p-8 shadow-lg border border-gray-100 group-hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                {/* Left Laurel */}
+                <Image src={Feather} alt="Laurel" className="opacity-70 w-8" />
 
-              {/* Rating */}
-              <div className="text-4xl sm:text-5xl font-bold text-black pb-2 sm:pb-4">4.92</div>
+                {/* Rating */}
+                <motion.div 
+                  className="text-5xl sm:text-6xl font-bold bg-gradient-to-r"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
+                  viewport={{ once: true }}
+                >
+                  4.92
+                </motion.div>
 
-              {/* Right Laurel */}
-              <Image
-                src={FeatherRight}
-                alt="Laurel"
-                className="opacity-70 w-8"
-              />
-            </div>
-
-            {/* Title */}
-            <div className="text-center">
-              <div className="text-base font-semibold text-black">
-                Guest favorite
+                {/* Right Laurel */}
+                <Image
+                  src={FeatherRight}
+                  alt="Laurel"
+                  className="opacity-70 w-8"
+                />
               </div>
 
-              {/* Subtitle */}
-              <div className="text-xs text-gray-600 leading-tight max-w-64">
-                One of the most loved homes on Airbnb based on ratings, reviews,
-                and reliability
+              {/* Stars */}
+              <div className="flex justify-center gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <motion.svg
+                    key={i}
+                    className="w-5 h-5 text-yellow-400 fill-current"
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.7 + i * 0.1 }}
+                    viewport={{ once: true }}
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </motion.svg>
+                ))}
+              </div>
+
+              {/* Title */}
+              <div className="text-center">
+                <div className="text-lg font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent mb-1">
+                  Guest Favorite
+                </div>
+
+                {/* Subtitle */}
+                <div className="text-xs font-medium bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent leading-tight max-w-64 mx-auto">
+                  One of the most loved homes on Airbnb based on ratings, reviews,
+                  and reliability
+                </div>
               </div>
             </div>
           </motion.div>
 
           <motion.div
+            className="group relative"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <Image
-              src={QualityServiceBadge}
-              alt="Quality Service Badge"
-              className="h-24 sm:h-28 md:h-32 w-auto"
-            />
+            <div className="relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group-hover:shadow-xl transition-all duration-300">
+              <Image
+                src={QualityServiceBadge}
+                alt="Quality Service Badge"
+                className="h-24 sm:h-28 md:h-32 w-auto mx-auto"
+              />
+              <div className="mt-3 text-center">
+                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Premium</div>
+                <div className="text-sm font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">Service Excellence</div>
+              </div>
+            </div>
           </motion.div>
         </div>
+
+        {/* Bottom Stats Bar */}
+        <motion.div
+          className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+            <Building2 className="w-6 h-6 mx-auto mb-2 text-teal-600" />
+            <div className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-teal-700 bg-clip-text text-transparent">110+</div>
+            <div className="text-xs text-gray-600 font-medium mt-1">Luxury Apartments</div>
+          </div>
+          <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+            <Users className="w-6 h-6 mx-auto mb-2 text-blue-600" />
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">1500+</div>
+            <div className="text-xs text-gray-600 font-medium mt-1">Satisfied Reviews</div>
+          </div>
+          <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+            <Heart className="w-6 h-6 mx-auto mb-2 text-rose-500" />
+            <div className="text-2xl font-bold bg-gradient-to-r from-rose-500 to-rose-600 bg-clip-text text-transparent">7+</div>
+            <div className="text-xs text-gray-600 font-medium mt-1">Years of Operation</div>
+          </div>
+          <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+            <Building2 className="w-6 h-6 mx-auto mb-2 text-purple-600" />
+            <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent">95%</div>
+            <div className="text-xs text-gray-600 font-medium mt-1">Occupancy Rate</div>
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   );
 }
 
-interface Props {
-  size?: number;
-  radius?: number;
-  topText?: string;
-  bottomText?: string;
-  title?: string;
-  textColor?: string;
-  showCard?: boolean;
-  className?: string;
-}
-
-function ServiceBadge({
-  size = 360,
-  radius = 130,
-  topText = "BEST QUALITY",
-  bottomText = "GUARANTEED",
-  title = "SERVICE",
-  textColor = "#1a1a1a",
-  showCard = true,
-  className = "",
-}: Props) {
-  // Fixed 400x400 viewBox for clean scaling
-  const VB = 400;
-  const cx = 200;
-  const cy = 200;
-  const r = Math.max(60, Math.min(180, radius));
-
-  const topArc = `M ${cx - r} ${cy} A ${r} ${r} 0 0 1 ${cx + r} ${cy}`;
-  const bottomArc = `M ${cx - r} ${cy} A ${r} ${r} 0 0 0 ${cx + r} ${cy}`;
-
-  // Allow Tailwind color classes OR hex codes
-  const textClass =
-    textColor.startsWith("#") || textColor.startsWith("rgb")
-      ? undefined
-      : textColor; // e.g., "text-neutral-900"
-  const textFill =
-    textColor.startsWith("#") || textColor.startsWith("rgb")
-      ? textColor
-      : undefined;
-
-  const Wrapper = ({ children }: { children: React.ReactNode }) => (
-    <div style={{ width: size }}>{children}</div>
-  );
-
-  return (
-    <Wrapper>
-      <svg
-        viewBox={`0 0 ${VB} ${VB}`}
-        className={["block h-auto w-full ", textClass ?? ""].join(" ")}
-        role="img"
-        aria-label={`${topText} ${title} ${bottomText} badge`}
-        style={{ color: textFill }}
-      >
-        <defs>
-          <path id="topArc" d={topArc} />
-          <path id="bottomArc" d={bottomArc} />
-        </defs>
-
-        {/* Top curved label */}
-        <text
-          className="font-sans uppercase"
-          style={{
-            fontSize: 30,
-            fontWeight: 700,
-            letterSpacing: "0.15em",
-            lineHeight: 1.5,
-          }}
-        >
-          <textPath href="#topArc" startOffset="50%" textAnchor="middle">
-            {topText}
-          </textPath>
-        </text>
-
-        {/* Center title */}
-        <text
-          x={cx}
-          y={cy + 12}
-          textAnchor="middle"
-          className="font-sans uppercase"
-          style={{ fontSize: 64, fontWeight: 700, letterSpacing: "0.15em" }}
-        >
-          {title}
-        </text>
-
-        {/* Bottom curved label */}
-        <text
-          className="font-sans uppercase"
-          style={{
-            fontSize: 30,
-            fontWeight: 700,
-            letterSpacing: "0.2em",
-          }}
-        >
-          <textPath href="#bottomArc" startOffset="50%" textAnchor="middle">
-            {bottomText}
-          </textPath>
-        </text>
-      </svg>
-    </Wrapper>
-  );
-}
