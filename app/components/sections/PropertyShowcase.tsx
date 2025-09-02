@@ -4,6 +4,10 @@ import { MapPin, Home, Star } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
+import { Badge } from "../ui/Badge";
+import AddressImage from "@/public/pics/address/!4-picked.jpg"
+import JBRImage from "@/public/pics/jbr/CityView.jpg"
+import BusinessBayImage from "@/public/pics/1301-damac/!Living 5-picked.jpg"
 
 export default function PropertyShowcase() {
   const [hoveredArea, setHoveredArea] = useState<string | null>(null);
@@ -13,8 +17,7 @@ export default function PropertyShowcase() {
       name: "Downtown Dubai",
       properties: "35+ Properties",
       description: "Iconic skyline views & luxury living",
-      image:
-        "https://bookingenginecdn.hostaway.com/listing/82948-298788-O--o5Vzz6y3zdfaqCydqLI7XRAJfJqarNICSVjfmIrqk-6734c3055c817?width=1280&quality=70&format=webp&v=2",
+      image: AddressImage,
       features: [
         "Burj Khalifa Views",
         "Dubai Mall Access",
@@ -42,7 +45,7 @@ export default function PropertyShowcase() {
       properties: "22+ Properties",
       description: "Modern business hub & canal views",
       image:
-        "https://bookingenginecdn.hostaway.com/listing/82948-304877-sQSjQroLqCQyJL47aFh1Z1cv5POQor2rWXUuW3I8PHc-6734c3422e004?width=1280&quality=70&format=webp&v=2",
+        BusinessBayImage,
       features: ["Canal Views", "Business District", "Modern Architecture"],
     },
     {
@@ -50,7 +53,7 @@ export default function PropertyShowcase() {
       properties: "18+ Properties",
       description: "Beachfront paradise & lakeside towers",
       image:
-        "https://bookingenginecdn.hostaway.com/listing/82948-371971-DERgtzLVve--2t2z30E7OB1pmd5OXgB8vbTkwM8DHxvM-67d8c8f0076b6?width=1280&quality=70&format=webp&v=2",
+        JBRImage,
       features: ["Beach Living", "The Walk", "Family Friendly"],
     },
     {
@@ -74,15 +77,7 @@ export default function PropertyShowcase() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.span
-            className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            Premium Locations
-          </motion.span>
+          <Badge>Premium Locations</Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Properties Across Dubai
           </h2>

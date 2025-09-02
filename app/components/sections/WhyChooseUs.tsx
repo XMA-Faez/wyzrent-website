@@ -6,6 +6,7 @@ import { Button } from "../ui/Button";
 import { BiStar } from "react-icons/bi";
 import { BsStar } from "react-icons/bs";
 import { FaStar, FaUser } from "react-icons/fa";
+import { Badge } from "../ui/Badge";
 import { RiBuilding2Fill, RiBuilding2Line } from "react-icons/ri";
 
 export default function WhyChooseUs() {
@@ -54,15 +55,7 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.span
-            className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            Our Difference
-          </motion.span>
+          <Badge>Our Difference</Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Why Choose WYZRENT?
           </h2>

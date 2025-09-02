@@ -3,6 +3,7 @@
 import { ArrowRight, Building, Sparkles, Shield, Heart } from "lucide-react";
 import { motion } from "motion/react";
 import { Button } from "../ui/Button";
+import { Badge } from "../ui/Badge";
 
 export default function Services() {
   const services = [
@@ -51,16 +52,7 @@ export default function Services() {
           transition={{ duration: 0.4 }}
           viewport={{ once: true, amount: 0.4 }}
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <span className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase">
-              Premium Management Solutions
-            </span>
-          </motion.div>
+          <Badge>Premium Management Solutions</Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Full-Service Property Management
           </h2>

@@ -5,6 +5,7 @@ import {
   ScrollVelocityContainer,
   ScrollVelocityRow,
 } from "../ui/ScrollVelocity";
+import { Badge } from "../ui/Badge";
 
 export default function OwnerTestimonials() {
   const testimonials = [
@@ -86,15 +87,7 @@ export default function OwnerTestimonials() {
       >
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <motion.span
-            className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            viewport={{ once: true }}
-          >
-            Owner Testimonials
-          </motion.span>
+          <Badge>Owner Testimonials</Badge>
           <motion.h2
             className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}

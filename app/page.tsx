@@ -9,6 +9,7 @@ import {
   FAQ,
   CTA,
 } from "./components/sections";
+import HowItWorks from "./components/sections/HowItWorks";
 import { TrustBadges, RevenueCalculator } from "./components/ui";
 import WhatsAppWidget from "./components/ui/WhatsAppWidget";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <TrustBadges />
         <Services />
         <PropertyShowcase />
+        <HowItWorks />
         <WhyChooseUs />
         <RevenueCalculator />
         <RentalComparison />

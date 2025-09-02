@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { Star, Heart, Building2, Users } from "lucide-react";
 import { NumberTicker } from "./NumberTicker";
+import { Badge } from "./Badge";
 import AirbnbSuperhostBadge from "@/public/airbnb-superhost-badge.png";
 import Feather from "@/public/feather.png";
 import FeatherRight from "@/public/feather-right.png";
@@ -26,15 +27,7 @@ export default function TrustBadges() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.span
-            className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            Trust & Excellence
-          </motion.span>
+          <Badge>Trust & Excellence</Badge>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">
             Recognized Excellence in Hospitality
           </h2>
@@ -46,13 +39,13 @@ export default function TrustBadges() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-12 md:gap-16">
           {/* Airbnb Superhost Badge */}
           <motion.div
-            className="group relative"
+            className="group relative w-full md:w-auto"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group-hover:shadow-xl transition-all duration-300">
+            <div className="relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 group-hover:shadow-xl transition-all duration-300">
               <Image
                 src={AirbnbSuperhostBadge}
                 alt="Airbnb Superhost"
@@ -67,13 +60,13 @@ export default function TrustBadges() {
 
           {/* Guest Favorite Badge */}
           <motion.div
-            className="group relative"
+            className="group relative w-full md:w-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="relative bg-gradient-to-br from-white to-white rounded-2xl p-8 shadow-lg border border-gray-100 group-hover:shadow-xl transition-all duration-300">
+            <div className="relative bg-gradient-to-br from-white to-white rounded-2xl p-8 shadow-sm border border-gray-100 group-hover:shadow-xl transition-all duration-300">
               <div className="flex items-center justify-center gap-2 mb-4">
                 {/* Left Laurel */}
                 <Image src={Feather} alt="Laurel" className="opacity-70 w-8" />
@@ -130,13 +123,13 @@ export default function TrustBadges() {
           </motion.div>
 
           <motion.div
-            className="group relative"
+            className="group relative w-full md:w-auto"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group-hover:shadow-xl transition-all duration-300">
+            <div className="relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 group-hover:shadow-xl transition-all duration-300">
               <Image
                 src={QualityServiceBadge}
                 alt="Quality Service Badge"

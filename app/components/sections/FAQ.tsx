@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Button } from '../ui/Button';
+import { Badge } from '../ui/Badge';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -62,15 +62,7 @@ export default function FAQ() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.span
-            className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            Knowledge Base
-          </motion.span>
+          <Badge>Knowledge Base</Badge>
           <motion.h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -96,14 +88,14 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="bg-gradient-to-br from-white via-gray-50/30 to-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-200 hover:border-blue-200/50"
+              className="bg-gradient-to-br from-white via-gray-50/30 to-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-gray-200"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
             >
               <button
-                className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-100 transition-colors duration-200"
+                className="w-full px-6 py-5 text-left flex items-center justify-between transition-colors duration-200"
                 onClick={() => toggleQuestion(index)}
               >
                 <h3 className="text-lg font-bold pr-4 bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
@@ -144,43 +136,6 @@ export default function FAQ() {
             </motion.div>
           ))}
         </div>
-
-        {/* CTA Section */}
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <motion.p 
-            className="font-medium mb-6 bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Still have questions? We're here to help.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <Button
-              variant="primary"
-              size="lg"
-              rightIcon={
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              }
-            >
-              Contact Our Team
-            </Button>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
