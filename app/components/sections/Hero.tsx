@@ -110,6 +110,7 @@ export default function Hero() {
                   variant="primary"
                   rightIcon={<span aria-hidden="true">→</span>}
                   aria-label="Get your free property valuation"
+                  className="bg-white text-black hover:bg-gray-300 hover:scale-105 transition-transform"
                 >
                   Get Your Free Property Valuation
                 </Button>

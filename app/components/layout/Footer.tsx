@@ -16,12 +16,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="lg:col-span-2">
-            <Image 
-              src="/logo.png" 
-              alt="WYZRENT" 
+            <Image
+              src="/logo.png"
+              alt="WYZRENT"
               width={360}
               height={100}
-              className="h-10 w-auto mb-4" 
+              className="h-10 w-auto mb-4"
             />
             <p className="text-gray-600 leading-relaxed max-w-md">
               Luxury short-term rental management in Dubai. We maximize your
@@ -74,16 +74,24 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-600">
                 <MapPin className="w-4 h-4 text-blue-600" />
-                <span className="text-sm">Dubai, UAE</span>
+                <span className="text-sm">
+                  Office 419, Blue Bay Tower by Al Sayyah, Dubai, UAE
+                </span>
               </div>
-              <div className="flex items-center gap-3 text-gray-600">
+              <Link
+                href="tel:+971585885060"
+                className="flex items-center gap-3 text-gray-600"
+              >
                 <Phone className="w-4 h-4 text-blue-600" />
-                <span className="text-sm">+971 50 123 4567</span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-600">
+                <span className="text-sm">+971 58 588 5060</span>
+              </Link>
+              <Link
+                href="mailto:info@wyzrent.com"
+                className="flex items-center gap-3 text-gray-600"
+              >
                 <Mail className="w-4 h-4 text-blue-600" />
                 <span className="text-sm">info@wyzrent.com</span>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
