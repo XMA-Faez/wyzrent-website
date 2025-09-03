@@ -174,7 +174,7 @@ export default function Header() {
                     }}
                     className={
                       item.name === 'Book Your Stay'
-                        ? "bg-blue-600 text-white px-4 py-2 rounded-lg font-medium text-center hover:bg-blue-700 transition-all duration-200 shadow-md"
+                        ? "bg-blue-600 text-white px-4 py-2 rounded-lg font-medium text-center hover:bg-blue-700 shadow-md"
                         : "text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2"
                     }
                     initial={{ opacity: 0, x: -20 }}

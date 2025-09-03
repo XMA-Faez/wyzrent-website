@@ -105,22 +105,16 @@ export default function Footer() {
           {/* Social Links */}
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <a
-              href="#"
+              href="https://www.instagram.com/wyzrent/"
               className="text-gray-400 hover:text-blue-600 transition-colors"
             >
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/wyz-rent/"
               className="text-gray-400 hover:text-blue-600 transition-colors"
             >
               <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-blue-600 transition-colors"
-            >
-              <Facebook className="w-5 h-5" />
             </a>
           </div>
         </div>
