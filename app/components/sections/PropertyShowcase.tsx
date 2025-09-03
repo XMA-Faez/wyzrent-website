@@ -5,9 +5,9 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
 import { Badge } from "../ui/Badge";
-import AddressImage from "@/public/pics/address/!4-picked.jpg"
+import AddressImage from "@/public/pics/address/4-picked.jpg"
 import JBRImage from "@/public/pics/jbr/CityView.jpg"
-import BusinessBayImage from "@/public/pics/1301-damac/!Living 5-picked.jpg"
+import BusinessBayImage from "@/public/pics/1301-damac/Living 5-picked.jpg"
 
 export default function PropertyShowcase() {
   const [hoveredArea, setHoveredArea] = useState<string | null>(null);
