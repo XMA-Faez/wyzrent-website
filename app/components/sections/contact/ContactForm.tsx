@@ -31,17 +31,30 @@ export default function ContactForm() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
       const formData = {
-        ...data,
-        phone: phone,
-        submittedAt: new Date().toISOString()
+        name: data.name,
+        email: data.email,
+        phone: phone || '',
+        message: data.message,
+        submittedAt: new Date().toISOString(),
+        source: 'WYZRENT Website Contact Form'
       };
       
-      console.log("Form submitted:", formData);
+      // Send to CRM webhook
+      const response = await fetch('https://services.leadconnectorhq.com/hooks/v353GsuwtanGru6iy6gq/webhook-trigger/0e3ae248-c7c9-4651-90a8-449f9e180c52', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      console.log("Form successfully submitted to CRM");
       
       setSubmitStatus('success');
       reset();
