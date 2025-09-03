@@ -62,7 +62,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section id="consultation" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
@@ -267,7 +267,7 @@ export default function ContactForm() {
                 <div className="mt-8 pt-6 border-t border-white/50">
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-blue-600">90+</div>
+                      <div className="text-2xl font-bold text-blue-600">110+</div>
                       <div className="text-sm text-gray-600">Properties Managed</div>
                     </div>
                     <div>

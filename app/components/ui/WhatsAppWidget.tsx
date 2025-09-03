@@ -9,7 +9,7 @@ export default function WhatsAppWidget() {
   const [showTooltip, setShowTooltip] = useState(false);
   
   // WhatsApp number for Dubai (example - replace with actual)
-  const whatsappNumber = "971501234567"; // Format: country code + number
+  const whatsappNumber = "971585885060"; // Format: country code + number
   const defaultMessage = "Hi! I'm interested in your property management services.";
   
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function WhatsAppWidget() {
         {/* Main Button */}
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 group hover:scale-110 active:scale-95"
+          className="bg-green-500 cursor-pointer hover:bg-green-600 text-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 group hover:scale-110 active:scale-95"
           aria-label="Open WhatsApp chat"
         >
           <svg
@@ -139,7 +139,7 @@ export default function WhatsAppWidget() {
               <div className="space-y-2">
                 <button
                   onClick={handleWhatsAppClick}
-                  className="w-full bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                  className="w-full cursor-pointer bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
                 >
                   <svg
                     className="w-5 h-5"

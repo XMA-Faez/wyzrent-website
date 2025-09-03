@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -66,17 +68,21 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div 
-            className="flex items-center"
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <img 
-              src="/logo.png" 
-              alt="WYZRENT" 
-              className="h-8 md:h-10"
-            />
+            <Link href="/" className="flex items-center">
+              <Image 
+                src="/logo.png" 
+                alt="WYZRENT" 
+                width={120}
+                height={40}
+                className="h-8 md:h-10 w-auto cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                priority
+              />
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { 
   XCircle, 
   CheckCircle2, 
@@ -236,27 +237,29 @@ export default function RentalComparison() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <Button
-            size="lg"
-            variant="primary"
-            rightIcon={
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            }
-          >
-            Switch to Short-Term Rentals
-          </Button>
+          <Link href="/contact-us#consultation">
+            <Button
+              size="lg"
+              variant="primary"
+              rightIcon={
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              }
+            >
+              Switch to Short-Term Rentals
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

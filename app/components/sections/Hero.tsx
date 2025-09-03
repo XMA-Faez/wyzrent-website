@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 import { Button } from "../ui/Button";
 
 export default function Hero() {
@@ -105,15 +106,17 @@ export default function Hero() {
                 transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
                 className="mt-6 sm:mt-8"
               >
-                <Button 
-                  size="lg"
-                  variant="primary"
-                  rightIcon={<span aria-hidden="true">→</span>}
-                  aria-label="Get your free property valuation"
-                  className="bg-white text-black hover:bg-gray-300 hover:scale-105 transition-transform"
-                >
-                  Get Your Free Property Valuation
-                </Button>
+                <Link href="/contact-us#consultation">
+                  <Button 
+                    size="lg"
+                    variant="primary"
+                    rightIcon={<span aria-hidden="true">→</span>}
+                    aria-label="Get your free property valuation"
+                    className="bg-white text-black hover:bg-gray-300 hover:scale-105 transition-transform"
+                  >
+                    Get Your Free Property Valuation
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </div>

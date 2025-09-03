@@ -1,6 +1,7 @@
 "use client";
 import { Phone, MessageCircle, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
+import Link from "next/link";
 import { Button } from "../ui/Button";
 
 export default function CTA() {
@@ -38,14 +39,16 @@ export default function CTA() {
           transition={{ duration: 0.4, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <Button
-            variant="secondary"
-            size="lg"
-            rightIcon={<ArrowRight className="w-5 h-5" />}
-            className="px-10 bg-white text-black border-white hover:bg-gray-100"
-          >
-            Get Started Today
-          </Button>
+          <Link href="/contact-us#consultation">
+            <Button
+              variant="secondary"
+              size="lg"
+              rightIcon={<ArrowRight className="w-5 h-5" />}
+              className="px-10 bg-white text-black border-white hover:bg-gray-100"
+            >
+              Get Started Today
+            </Button>
+          </Link>
         </motion.div>
 
         <motion.div

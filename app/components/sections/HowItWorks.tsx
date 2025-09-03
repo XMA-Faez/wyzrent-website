@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 import {
   Phone,
   Search,
@@ -228,14 +229,16 @@ export default function HowItWorks() {
           <p className="text-lg md:text-xl mb-6 text-muted-foreground">
             Ready to maximize your property's potential?
           </p>
-          <Button
-            variant="primary"
-            size="lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Start Your Journey
-          </Button>
+          <Link href="/contact-us#consultation">
+            <Button
+              variant="primary"
+              size="lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Start Your Journey
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

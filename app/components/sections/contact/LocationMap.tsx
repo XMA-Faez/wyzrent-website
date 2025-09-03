@@ -1,30 +1,20 @@
 "use client";
 
 import { motion } from "motion/react";
-import { MapPin, Navigation, Clock, Car } from "lucide-react";
+import { MapPin, Clock } from "lucide-react";
 
 export default function LocationMap() {
   const locationDetails = [
     {
       icon: MapPin,
       title: "Address",
-      details: ["Business Bay Tower", "Business Bay, Dubai", "United Arab Emirates"]
+      details: ["Office 419, Blue Bay Tower by Al Sayyah", "Business Bay, Dubai", "United Arab Emirates"]
     },
     {
       icon: Clock,
       title: "Office Hours",
-      details: ["Sunday - Thursday: 9:00 AM - 6:00 PM", "Friday - Saturday: Closed"]
+      details: ["Monday - Friday: 9:00 AM - 6:00 PM", "Saturday - Sunday: Closed"]
     },
-    {
-      icon: Car,
-      title: "Parking",
-      details: ["Visitor parking available", "Valet service provided", "Easy metro access"]
-    },
-    {
-      icon: Navigation,
-      title: "Directions",
-      details: ["5 min from Dubai Mall", "10 min from DIFC", "Near Business Bay Metro"]
-    }
   ];
 
   return (
@@ -48,7 +38,7 @@ export default function LocationMap() {
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Map Placeholder */}
+            {/* Google Maps Embed */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -56,30 +46,17 @@ export default function LocationMap() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl h-[400px] flex items-center justify-center relative overflow-hidden shadow-lg">
-                {/* Background pattern */}
-                <div className="absolute inset-0 opacity-20">
-                  <div className="absolute inset-0" style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M20 20c0-8.837-7.163-16-16-16s-16 7.163-16 16 7.163 16 16 16 16-7.163 16-16zm-8 0c0-4.418-3.582-8-8-8s-8 3.582-8 8 3.582 8 8 8 8-3.582 8-8z'/%3E%3C/g%3E%3C/svg%3E")`,
-                  }} />
-                </div>
-                
-                {/* Map content */}
-                <div className="text-center z-10">
-                  <div className="inline-flex p-4 bg-blue-600 rounded-full mb-4">
-                    <MapPin className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Business Bay, Dubai</h3>
-                  <p className="text-gray-600 mb-4">Premium location in the business district</p>
-                  <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                    View on Maps
-                  </button>
-                </div>
-
-                {/* Floating pins */}
-                <div className="absolute top-8 right-8 w-3 h-3 bg-blue-600 rounded-full animate-pulse" />
-                <div className="absolute bottom-12 left-12 w-2 h-2 bg-blue-500 rounded-full animate-pulse delay-1000" />
-                <div className="absolute top-1/3 left-8 w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-500" />
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[450px]">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.615529071723!2d55.2699115696603!3d25.18763379860735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682d28339af7%3A0x383e4374df1e942!2sBlue%20Bay%20Tower%20-%20Business%20Bay%20-%20Dubai!5e0!3m2!1sen!2sae!4v1756902613598!5m2!1sen!2sae" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={true}
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="WYZRENT Office Location - Blue Bay Tower, Business Bay, Dubai"
+                />
               </div>
             </motion.div>
 
@@ -119,30 +96,6 @@ export default function LocationMap() {
               ))}
             </motion.div>
           </div>
-
-          {/* Call to Action */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-center text-white"
-          >
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Visit Our Office?
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Schedule an appointment to meet our team in person and discuss your property management needs over coffee
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                Schedule Visit
-              </button>
-              <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition-colors">
-                Get Directions
-              </button>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

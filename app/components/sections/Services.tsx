@@ -2,6 +2,7 @@
 
 import { ArrowRight, Building, Sparkles, Shield, Heart } from "lucide-react";
 import { motion } from "motion/react";
+import Link from "next/link";
 import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
 
@@ -108,13 +109,15 @@ export default function Services() {
           transition={{ duration: 0.4, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <Button 
-            size="lg"
-            variant="primary"
-            rightIcon={<ArrowRight className="w-5 h-5" />}
-          >
-            Get Your Free Property Valuation
-          </Button>
+          <Link href="/contact-us#consultation">
+            <Button 
+              size="lg"
+              variant="primary"
+              rightIcon={<ArrowRight className="w-5 h-5" />}
+            >
+              Get Your Free Property Valuation
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

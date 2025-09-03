@@ -1,6 +1,7 @@
 "use client";
 import { CheckCircle, Star, Users, Building2, TrendingUp, Heart, Crown, MessageSquare, Shield, Award, StarIcon, Building, Stars, StarsIcon } from "lucide-react";
 import { motion } from "motion/react";
+import Link from "next/link";
 import { NumberTicker } from "../ui/NumberTicker";
 import { Button } from "../ui/Button";
 import { BiStar } from "react-icons/bi";
@@ -109,27 +110,29 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <Button
-            size="lg"
-            variant="primary"
-            rightIcon={
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            }
-          >
-            Schedule Your Free Consultation
-          </Button>
+          <Link href="/contact-us#consultation">
+            <Button
+              size="lg"
+              variant="primary"
+              rightIcon={
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              }
+            >
+              Schedule Your Free Consultation
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>
