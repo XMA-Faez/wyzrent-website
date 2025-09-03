@@ -12,6 +12,7 @@ export default function OwnerPortal() {
       title: "Real-time Insights",
       description: "Stay informed about the performance of your property at any time through Host Away App",
       icon: BarChart3,
+      iconColor: "text-emerald-600",
       gradient: "from-emerald-500 to-teal-600",
       bgGradient: "from-emerald-50 to-teal-50",
     },
@@ -20,6 +21,7 @@ export default function OwnerPortal() {
       title: "Comprehensive Data",
       description: "Access comprehensive property insights, including revenues, check-ins, and check out",
       icon: Database,
+      iconColor: "text-blue-600",
       gradient: "from-blue-500 to-indigo-600",
       bgGradient: "from-blue-50 to-indigo-50",
     },
@@ -28,6 +30,7 @@ export default function OwnerPortal() {
       title: "Secure Data", 
       description: "Receive payments directly to your bank account before the 15th of each month with a detailed financial report",
       icon: CreditCard,
+      iconColor: "text-purple-600",
       gradient: "from-purple-500 to-violet-600",
       bgGradient: "from-purple-50 to-violet-50",
     },
@@ -190,7 +193,7 @@ export default function OwnerPortal() {
                         
                         {/* Monthly Stats */}
                         <div className="mt-3 pt-2 border-t border-gray-200">
-                          <div className="grid grid-cols-2 gap-2">
+                          <div className="grid grid-cols-2 gap-1">
                             <div className="bg-blue-50 p-2 rounded text-center">
                               <div className="text-xs font-bold text-blue-600">85%</div>
                               <div className="text-[10px] text-blue-500">Occupancy</div>
@@ -226,7 +229,7 @@ export default function OwnerPortal() {
               return (
                 <motion.div
                   key={feature.id}
-                  className={`group relative p-6 rounded-2xl bg-gradient-to-br ${feature.bgGradient} border border-white/50 hover:shadow-lg`}
+                  className={`group relative p-6 rounded-2xl bg-gradient-to-br ${feature.bgGradient} border transition-shadow border-white/50 hover:shadow-lg`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -241,7 +244,7 @@ export default function OwnerPortal() {
                     {/* Content */}
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">
-                        <Icon className={`w-5 h-5 bg-gradient-to-br ${feature.gradient} bg-clip-text text-transparent`} />
+                        <Icon className={`w-5 h-5 ${feature.iconColor}`} />
                         <h3 className="font-semibold text-lg text-gray-900">
                           {feature.title}
                         </h3>
@@ -251,9 +254,6 @@ export default function OwnerPortal() {
                       </p>
                     </div>
                   </div>
-
-                  {/* Hover Effect */}
-                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5`}></div>
                 </motion.div>
               );
             })}
