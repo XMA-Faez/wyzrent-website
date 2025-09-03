@@ -119,7 +119,7 @@ export default function RevenueCalculator() {
   };
 
   return (
-    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-slate-950 to-slate-900">
       <motion.div
         className="container mx-auto"
         initial={{ opacity: 0, y: 20 }}
@@ -135,13 +135,13 @@ export default function RevenueCalculator() {
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <Badge className="uppercase tracking-wider text-xs sm:text-sm">
+            <Badge className="uppercase tracking-wider text-xs sm:text-sm bg-gradient-to-r from-blue-500/20 to-emerald-500/20 text-blue-200 border border-blue-500/30 backdrop-blur-sm">
               Revenue Calculator
             </Badge>
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-blue-100 to-emerald-100 bg-clip-text text-transparent">
               Estimate Your Revenue
             </h2>
-            <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium">
+            <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-slate-200 font-medium">
               Calculate your potential monthly income from luxury short-term
               rentals in Dubai
             </p>
@@ -159,8 +159,8 @@ export default function RevenueCalculator() {
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-3 mb-8">
-                <Calculator className="w-6 h-6 text-blue-600" />
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
+                <Calculator className="w-6 h-6 text-blue-400" />
+                <h3 className="text-2xl font-bold text-white">
                   Property Details
                 </h3>
               </div>
@@ -173,15 +173,14 @@ export default function RevenueCalculator() {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   viewport={{ once: true }}
                 >
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
+                  <label className="block text-sm font-semibold text-slate-200 mb-3">
                     Location
                   </label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <select
                       value={area}
                       onChange={(e) => handleAreaChange(e.target.value)}
-                      className="w-full pl-10 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 transition-all duration-300 hover:shadow-md"
+                      className="w-full pl-4 pr-4 py-4 border border-slate-600/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-400 bg-slate-800/50 backdrop-blur-sm text-white transition-all duration-300 hover:shadow-lg hover:border-blue-500/50"
                     >
                       <option value="">Select Area</option>
                       {areas.map((areaOption) => {
@@ -215,15 +214,14 @@ export default function RevenueCalculator() {
                   transition={{ duration: 0.6, delay: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
+                  <label className="block text-sm font-semibold text-slate-200 mb-3">
                     Property Size
                   </label>
                   <div className="relative">
-                    <Home className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <select
                       value={bedrooms}
                       onChange={(e) => handleBedroomsChange(e.target.value)}
-                      className="w-full pl-10 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 transition-all duration-300 hover:shadow-md"
+                      className="w-full pl-4 pr-4 py-4 border border-slate-600/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-400 bg-slate-800/50 backdrop-blur-sm text-white transition-all duration-300 hover:shadow-lg hover:border-blue-500/50"
                     >
                       <option value="">Select Bedrooms</option>
                       {bedroomOptions.map((bedroomOption) => (
@@ -243,7 +241,7 @@ export default function RevenueCalculator() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
+                  <label className="block text-sm font-semibold text-slate-200 mb-3">
                     Furnishing Level
                   </label>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -255,8 +253,8 @@ export default function RevenueCalculator() {
                           onClick={() => handleFurnishingChange(option)}
                           className={`py-3 px-4 rounded-lg border text-sm font-medium text-center transition-all hover:scale-102 active:scale-98 ${
                             isSelected
-                              ? "border-blue-500 bg-blue-50 text-blue-700"
-                              : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50"
+                              ? "border-blue-400 bg-blue-500/20 text-blue-300 shadow-lg shadow-blue-500/20"
+                              : "border-slate-600/50 bg-slate-800/40 backdrop-blur-sm text-slate-200 hover:border-blue-500/50 hover:bg-slate-700/50"
                           }`}
                         >
                           {option}
@@ -277,10 +275,10 @@ export default function RevenueCalculator() {
               viewport={{ once: true }}
             >
               <div className="sticky top-8">
-                <div className="bg-gradient-to-br from-white via-gray-50/30 to-white rounded-3xl p-8 shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/50 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300">
                   <div className="flex items-center gap-3 mb-8">
-                    <TrendingUp className="w-6 h-6 text-green-600" />
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
+                    <TrendingUp className="w-6 h-6 text-blue-400" />
+                    <h3 className="text-2xl font-bold text-white">
                       Revenue Estimate
                     </h3>
                   </div>
@@ -296,38 +294,38 @@ export default function RevenueCalculator() {
                         className="space-y-6"
                       >
                         {/* Main Revenue Display */}
-                        <div className="text-center p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl">
-                          <div className="text-sm text-gray-600 mb-2">
+                        <div className="text-center p-6 bg-gradient-to-r from-blue-500/20 to-emerald-500/20 rounded-2xl border border-blue-400/30 shadow-lg shadow-blue-500/10">
+                          <div className="text-sm text-slate-200 mb-2">
                             Estimated Monthly Revenue
                           </div>
                           <motion.div
-                            className="text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-2"
+                            className="text-5xl font-bold bg-gradient-to-r from-blue-300 to-emerald-300 bg-clip-text text-transparent mb-2"
                             initial={{ scale: 0.5 }}
                             animate={{ scale: 1 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                           >
                             AED {animatedValue.toLocaleString()}
                           </motion.div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-sm text-slate-300">
                             *Based on current market rates
                           </div>
                         </div>
 
                         {/* Property Summary */}
-                        <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                          <h4 className="text-sm font-semibold text-gray-700 mb-4">
+                        <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-slate-600/50">
+                          <h4 className="text-sm font-semibold text-slate-200 mb-4">
                             Property Summary
                           </h4>
                           <div className="space-y-3">
                             <motion.div
-                              className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
+                              className="flex items-center gap-3 p-3 bg-slate-700/50 backdrop-blur-sm rounded-lg border border-slate-600/30"
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: 0.1 }}
                             >
-                              <MapPin className="w-4 h-4 text-blue-600" />
+                              <MapPin className="w-4 h-4 text-blue-400" />
                               <div className="flex-1">
-                                <span className="text-sm font-medium">
+                                <span className="text-sm font-medium text-white">
                                   {area}
                                 </span>
                                 <div
@@ -338,23 +336,23 @@ export default function RevenueCalculator() {
                               </div>
                             </motion.div>
                             <motion.div
-                              className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
+                              className="flex items-center gap-3 p-3 bg-slate-700/50 backdrop-blur-sm rounded-lg border border-slate-600/30"
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: 0.2 }}
                             >
-                              <Home className="w-4 h-4 text-blue-600" />
-                              <span className="text-sm font-medium">
+                              <Home className="w-4 h-4 text-blue-400" />
+                              <span className="text-sm font-medium text-white">
                                 {bedrooms}
                               </span>
                             </motion.div>
                             <motion.div
-                              className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
+                              className="flex items-center gap-3 p-3 bg-slate-700/50 backdrop-blur-sm rounded-lg border border-slate-600/30"
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: 0.3 }}
                             >
-                              <span className="text-sm font-medium">
+                              <span className="text-sm font-medium text-white">
                                 {furnishing}
                               </span>
                             </motion.div>
@@ -380,7 +378,7 @@ export default function RevenueCalculator() {
                         className="text-center py-16"
                       >
                         <motion.div
-                          className="text-gray-400 mb-6"
+                          className="text-blue-400 mb-6"
                           animate={{
                             rotate: [0, 5, -5, 0],
                             scale: [1, 1.05, 1],
@@ -393,10 +391,10 @@ export default function RevenueCalculator() {
                         >
                           <Calculator className="w-20 h-20 mx-auto" />
                         </motion.div>
-                        <h4 className="text-lg font-semibold text-gray-700 mb-2">
+                        <h4 className="text-lg font-semibold text-white mb-2">
                           Ready to Calculate
                         </h4>
-                        <p className="text-gray-500 text-sm leading-relaxed">
+                        <p className="text-slate-200/70 text-sm leading-relaxed">
                           Select your property details above to see your
                           potential revenue estimate
                         </p>
@@ -404,17 +402,17 @@ export default function RevenueCalculator() {
                         {/* Progress hints */}
                         <div className="mt-6 space-y-2">
                           {!area && (
-                            <div className="text-xs text-gray-400">
+                            <div className="text-xs text-slate-300">
                               📍 Select your location first
                             </div>
                           )}
                           {area && !bedrooms && (
-                            <div className="text-xs text-gray-400">
+                            <div className="text-xs text-slate-300">
                               🏠 Choose property size
                             </div>
                           )}
                           {area && bedrooms && !furnishing && (
-                            <div className="text-xs text-gray-400">
+                            <div className="text-xs text-slate-300">
                               🛋️ Select furnishing level
                             </div>
                           )}
