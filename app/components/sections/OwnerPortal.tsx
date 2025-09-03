@@ -53,7 +53,7 @@ export default function OwnerPortal() {
   };
 
   return (
-    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-black overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <motion.div
@@ -63,11 +63,11 @@ export default function OwnerPortal() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Badge>Management Dashboard</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
+          <Badge className="bg-gray-800 text-gray-300 border-gray-700">Management Dashboard</Badge>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white">
             Owner Portal
           </h2>
-          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium">
+          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed bg-gradient-to-r from-slate-300 to-slate-400 bg-clip-text text-transparent font-medium">
             Monitor and manage your property investments with comprehensive insights and real-time data
           </p>
         </motion.div>
@@ -95,9 +95,9 @@ export default function OwnerPortal() {
                 
                 {/* App Content Overlay */}
                 <div className="absolute" style={{
-                  top: '20px',
-                  left: '8%',
-                  right: '8%',
+                  top: '17px',
+                  right: '21px',
+                  left: '20px',
                   bottom: '20px'
                 }}>
                   <div className="bg-white rounded-[1.5rem] overflow-hidden h-full shadow-inner">
@@ -209,10 +209,6 @@ export default function OwnerPortal() {
                   </div>
                 </div>
               </div>
-
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-full blur-xl"></div>
             </div>
           </motion.div>
 
@@ -229,7 +225,7 @@ export default function OwnerPortal() {
               return (
                 <motion.div
                   key={feature.id}
-                  className={`group relative p-6 rounded-2xl bg-gradient-to-br ${feature.bgGradient} border transition-shadow border-white/50 hover:shadow-lg`}
+                  className="group relative p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/20"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -245,11 +241,11 @@ export default function OwnerPortal() {
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-3">
                         <Icon className={`w-5 h-5 ${feature.iconColor}`} />
-                        <h3 className="font-semibold text-lg text-gray-900">
+                        <h3 className="font-semibold text-lg text-white">
                           {feature.title}
                         </h3>
                       </div>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-gray-300 leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
