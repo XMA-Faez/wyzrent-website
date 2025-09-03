@@ -4,6 +4,7 @@ export { default as HowItWorks } from './HowItWorks';
 export { default as WhyChooseUs } from './WhyChooseUs';
 export { default as RentalComparison } from './RentalComparison';
 export { default as PropertyShowcase } from './PropertyShowcase';
+export { default as OwnerPortal } from './OwnerPortal';
 export { default as OwnerTestimonials } from './OwnerTestimonials';
 export { default as FAQ } from './FAQ';
 export { default as CTA } from './CTA';

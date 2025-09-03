@@ -4,6 +4,7 @@ import { useState } from "react";
 import { MapPin, Home, Calculator, TrendingUp } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "./Button";
+import { Badge } from "./Badge";
 
 export default function RevenueCalculator() {
   const [area, setArea] = useState("");
@@ -134,15 +135,9 @@ export default function RevenueCalculator() {
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <motion.span
-              className="inline-block px-4 py-1.5 mb-4 text-xs sm:text-sm font-semibold tracking-wider text-blue-700 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full uppercase"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-              viewport={{ once: true }}
-            >
+            <Badge className="uppercase tracking-wider text-xs sm:text-sm">
               Revenue Calculator
-            </motion.span>
+            </Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6">
               Estimate Your Revenue
             </h2>

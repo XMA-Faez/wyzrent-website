@@ -21,6 +21,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "demo1.angelostone.ca",
       },
+      {
+        protocol: "https",
+        hostname: "media.assettype.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.pinimg.com",
+      },
     ],
   }
 };

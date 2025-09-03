@@ -5,6 +5,7 @@ import {
   WhyChooseUs,
   RentalComparison,
   PropertyShowcase,
+  OwnerPortal,
   OwnerTestimonials,
   FAQ,
   CTA,
@@ -27,6 +28,7 @@ export default function Home() {
         <RevenueCalculator />
         <RentalComparison />
         <OwnerTestimonials />
+        <OwnerPortal />
         <FAQ />
         <CTA />
       </main>
