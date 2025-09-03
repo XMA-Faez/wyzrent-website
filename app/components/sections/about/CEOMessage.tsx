@@ -37,7 +37,7 @@ export default function CEOMessage() {
               <div className="sticky top-8">
                 <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-xl mb-6">
                   <Image
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888"
+                    src="https://demo1.angelostone.ca/wp-content/uploads/2025/03/ceo.jpeg"
                     alt="Louloua Bahri - CEO"
                     fill
                     className="object-cover"
