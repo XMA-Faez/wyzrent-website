@@ -18,17 +18,17 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className="bg-stone-50">
         <Hero />
         <TrustBadges />
-        <Services />
         <PropertyShowcase />
+        <Services />
         <HowItWorks />
         <WhyChooseUs />
         <RevenueCalculator />
         <RentalComparison />
-        <OwnerTestimonials />
         <OwnerPortal />
+        <OwnerTestimonials />
         <FAQ />
         <CTA />
       </main>

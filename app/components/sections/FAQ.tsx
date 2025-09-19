@@ -52,7 +52,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-white overflow-hidden">
+    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-stone-50 overflow-hidden">
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <motion.div 
@@ -64,7 +64,7 @@ export default function FAQ() {
         >
           <Badge>Knowledge Base</Badge>
           <motion.h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-blue-900"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -106,7 +106,7 @@ export default function FAQ() {
                     <ChevronUp className="w-5 h-5 text-blue-600 flex-shrink-0" />
                   </div>
                 ) : (
-                  <div className="bg-gray-50 p-2 rounded-full">
+                  <div className="bg-stone-50 p-2 rounded-full">
                     <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
                   </div>
                 )}

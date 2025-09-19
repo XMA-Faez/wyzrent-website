@@ -22,7 +22,7 @@ export default function MissionVision() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section className="py-16 md:py-24 bg-stone-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -33,10 +33,6 @@ export default function MissionVision() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
-              <Sparkles className="w-4 h-4" />
-              Our Purpose
-            </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
               Driven by Excellence
             </h2>

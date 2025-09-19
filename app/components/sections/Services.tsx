@@ -43,7 +43,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-16 sm:py-20 md:py-24 px-4 md:px-6 lg:px-8 bg-white overflow-hidden">
+    <section id="services" className="py-16 sm:py-20 md:py-24 px-4 md:px-6 lg:px-8 bg-stone-50 overflow-hidden">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <motion.div 
@@ -53,8 +53,8 @@ export default function Services() {
           transition={{ duration: 0.4 }}
           viewport={{ once: true, amount: 0.4 }}
         >
-          <Badge>Premium Management Solutions</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
+           {/* <Badge>Premium Management Solutions</Badge> */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-blue-900">
             Full-Service Property Management
           </h2>
           <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium">

@@ -17,11 +17,11 @@ const buttonVariants = cva(
         
         // Secondary button - alternative actions
         secondary: 
-          "bg-white text-gray-900 border border-gray-200 shadow-md hover:bg-gray-50 hover:shadow-lg focus:ring-gray-400/20",
+          "bg-white text-gray-900 border border-gray-200 shadow-md hover:bg-stone-50 hover:shadow-lg focus:ring-gray-400/20",
         
         // Ghost button - subtle actions
         ghost: 
-          "text-gray-700 hover:text-blue-600 hover:bg-gray-50 focus:ring-gray-400/20",
+          "text-gray-700 hover:text-blue-600 hover:bg-stone-50 focus:ring-gray-400/20",
         
         // Outline button - secondary with more emphasis
         outline: 

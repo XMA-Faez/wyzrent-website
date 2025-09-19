@@ -153,7 +153,7 @@ export default function ContactForm() {
                     onChange={setPhone}
                     inputClassName="w-full h-full !h-[37px] !border-l-0"
                     countrySelectorStyleProps={{
-                      className: "border border-gray-300 rounded-l-lg bg-white hover:bg-gray-50"
+                      className: "border border-gray-300 rounded-l-lg bg-white hover:bg-stone-50"
                     }}
                     dialCodePreviewStyleProps={{
                       className: "text-gray-600 px-2"

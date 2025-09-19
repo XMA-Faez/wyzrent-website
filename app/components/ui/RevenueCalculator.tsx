@@ -135,9 +135,9 @@ export default function RevenueCalculator() {
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <Badge className="uppercase tracking-wider text-xs sm:text-sm bg-gradient-to-r from-blue-500/20 to-emerald-500/20 text-blue-200 border border-blue-500/30 backdrop-blur-sm">
-              Revenue Calculator
-            </Badge>
+            {/*  <Badge className="uppercase tracking-wider text-xs sm:text-sm bg-gradient-to-r from-blue-500/20 to-emerald-500/20 text-blue-200 border border-blue-500/30 backdrop-blur-sm"> */}
+            {/*   Revenue Calculator */}
+            {/* </Badge> */}
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-blue-100 to-emerald-100 bg-clip-text text-transparent">
               Estimate Your Revenue
             </h2>

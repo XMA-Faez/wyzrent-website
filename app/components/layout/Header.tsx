@@ -58,8 +58,8 @@ export default function Header() {
     <motion.header 
       className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b ${
         isScrolled 
-          ? 'bg-white/98 border-gray-200 shadow-sm' 
-          : 'bg-white/95 border-gray-100'
+          ? 'bg-stone-50/98 border-gray-200 shadow-sm' 
+          : 'bg-stone-50/95 border-gray-100'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -77,7 +77,7 @@ export default function Header() {
               <Image 
                 src="/logo.png" 
                 alt="WYZRENT" 
-                width={120}
+                width={250}
                 height={40}
                 className="h-8 md:h-10 w-auto cursor-pointer hover:opacity-90 transition-opacity duration-200"
                 priority

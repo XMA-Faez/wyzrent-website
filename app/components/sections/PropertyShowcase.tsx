@@ -5,9 +5,11 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
 import { Badge } from "../ui/Badge";
-import AddressImage from "@/public/pics/address/4-picked.jpg"
-import JBRImage from "@/public/pics/jbr/CityView.jpg"
-import BusinessBayImage from "@/public/pics/1301-damac/Living 5-picked.jpg"
+import DowntownImage from "@/public/pics/address/4-picked.jpg"
+import JBRImage from "@/public/pics/jbr/TanningView.jpg"
+import BusinessBayImage from "@/public/pics/1301-damac/building-wide.jpg"
+import CityWalkImage from "@/public/pics/city-walk/Pool 1.jpg"
+import PalmImage from "@/public/pics/palm/PoolView.jpg"
 
 export default function PropertyShowcase() {
   const [hoveredArea, setHoveredArea] = useState<string | null>(null);
@@ -17,7 +19,7 @@ export default function PropertyShowcase() {
       name: "Downtown Dubai",
       properties: "35+ Properties",
       description: "Iconic skyline views & luxury living",
-      image: AddressImage,
+      image: DowntownImage,
       features: [
         "Burj Khalifa Views",
         "Dubai Mall Access",
@@ -37,7 +39,7 @@ export default function PropertyShowcase() {
       properties: "15+ Properties",
       description: "Exclusive island living & beach resorts",
       image:
-        "https://bookingenginecdn.hostaway.com/listing/82948-255593-MsRkoXKdJJs53yrdyi1DXCJNfXBVObI8jhg3CofcE8E-6734c323a737f?width=1280&quality=70&format=webp&v=2",
+        PalmImage,
       features: ["Private Beaches", "Luxury Resorts", "Atlantis Views"],
     },
     {
@@ -61,13 +63,13 @@ export default function PropertyShowcase() {
       properties: "12+ Properties",
       description: "Trendy urban living & shopping district",
       image:
-        "https://bookingenginecdn.hostaway.com/listing/82948-311704-OjApzMULn7woaqPC4fsA8xtgLC7ccq--59EqcQBwpSSo-6734c07a81135?width=1280&quality=70&format=webp&v=2",
+        CityWalkImage,
       features: ["Gate Avenue", "Art Galleries", "Fine Dining"],
     },
   ];
 
   return (
-    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-stone-50 overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <motion.div
@@ -77,8 +79,8 @@ export default function PropertyShowcase() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Badge>Premium Locations</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
+           {/* <Badge>Premium Locations</Badge> */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-blue-900">
             Properties Across Dubai
           </h2>
           <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium">

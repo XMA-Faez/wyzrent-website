@@ -89,7 +89,7 @@ export default function RentalComparison() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 overflow-hidden bg-white">
+    <section className="py-16 sm:py-20 overflow-hidden bg-stone-50">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
         <motion.div
@@ -99,11 +99,11 @@ export default function RentalComparison() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Badge>Rental Comparison</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
+           {/* <Badge>Rental Comparison</Badge> */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-blue-900">
             Why Short-Term Beats Long-Term
           </h2>
-          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium">
+          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed bg-gradient-to-r from-slate-600 to-slate-700 bg-clip-text text-transparent font-medium">
             Discover how short-term rentals transform your property into a premium income generator
           </p>
         </motion.div>

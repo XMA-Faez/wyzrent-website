@@ -87,8 +87,8 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative py-20 md:py-32">
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
+    <section ref={containerRef} className="relative py-20 md:py-32 bg-stone-50">
+      <div className="absolute inset-0 bg-gradient-to-br from-stone-50 via-stone-50 to-primary/5" />
 
       <div className="container relative mx-auto">
         <motion.div
@@ -98,11 +98,11 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <Badge>Our Process</Badge>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+           {/* <Badge>Our Process</Badge> */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-blue-800">
             Simple Steps to <span className="text-primary">Success</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance px-4">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance px-4 text-blue-950/80">
             From initial consultation to ongoing management, we handle everything so you can sit back and watch your profits grow
           </p>
         </motion.div>

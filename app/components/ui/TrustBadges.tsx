@@ -12,7 +12,7 @@ import QualityServiceBadge from "@/public/quality-service-bg-removed.png";
 export default function TrustBadges() {
   return (
     <motion.section
-      className="px-4 md:px-6 lg:px-10 py-16 sm:py-20 bg-gradient-to-b from-white via-blue-50/20 to-white"
+      className="px-4 md:px-6 lg:px-10 py-16 sm:py-20 bg-stone-100"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -27,8 +27,8 @@ export default function TrustBadges() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Badge>Trust & Excellence</Badge>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">
+          {/* <Badge>Trust & Excellence</Badge> */}
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 text-blue-900">
             Recognized Excellence in Hospitality
           </h2>
           <p className="text-sm sm:text-base max-w-2xl mx-auto bg-gradient-to-r from-gray-600 to-gray-700 bg-clip-text text-transparent font-medium">

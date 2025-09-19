@@ -63,7 +63,7 @@ export default function OwnerPortal() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Badge className="bg-gradient-to-r from-blue-500/20 to-emerald-500/20 text-blue-200 border border-blue-500/30 backdrop-blur-sm">Management Dashboard</Badge>
+           {/* <Badge className="bg-gradient-to-r from-blue-500/20 to-emerald-500/20 text-blue-200 border border-blue-500/30 backdrop-blur-sm">Management Dashboard</Badge> */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-blue-100 to-emerald-100 bg-clip-text text-transparent">
             Owner Portal
           </h2>
@@ -102,7 +102,7 @@ export default function OwnerPortal() {
                 }}>
                   <div className="bg-white rounded-[1.5rem] overflow-hidden h-full shadow-inner">
                     {/* Status Bar */}
-                    <div className="flex justify-between items-center px-3 py-2 bg-gray-50">
+                    <div className="flex justify-between items-center px-3 py-2 bg-stone-50">
                       <div className="text-sm relative left-5 font-medium">9:41</div>
                       <div className="flex gap-1">
                         <div className="w-3 h-1.5 bg-green-500 rounded-sm"></div>
@@ -172,7 +172,7 @@ export default function OwnerPortal() {
                           {calendarData.bookings.slice(0, 5).map((booking, index) => (
                             <motion.div
                               key={index}
-                              className="flex items-center justify-between p-1.5 bg-gray-50 rounded"
+                              className="flex items-center justify-between p-1.5 bg-stone-50 rounded"
                               initial={{ opacity: 0, y: 10 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ delay: 0.5 + index * 0.1 }}
