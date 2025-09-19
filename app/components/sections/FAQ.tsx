@@ -62,7 +62,7 @@ export default function FAQ() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <Badge>Knowledge Base</Badge>
+          {/* <Badge>Knowledge Base</Badge> */}
           <motion.h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-blue-900"
             initial={{ opacity: 0, y: 20 }}

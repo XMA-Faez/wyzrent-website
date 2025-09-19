@@ -1,4 +1,4 @@
-import { Header, Footer } from "./components/layout";
+import { Header, Footer, FooterBgImage } from "./components/layout";
 import {
   Hero,
   Services,
@@ -8,10 +8,9 @@ import {
   OwnerPortal,
   OwnerTestimonials,
   FAQ,
-  CTA,
 } from "./components/sections";
 import HowItWorks from "./components/sections/HowItWorks";
-import { TrustBadges, RevenueCalculator } from "./components/ui";
+import { TrustBadges, RevenueCalculator, ImageSection } from "./components/ui";
 import WhatsAppWidget from "./components/ui/WhatsAppWidget";
 
 export default function Home() {
@@ -23,16 +22,17 @@ export default function Home() {
         <TrustBadges />
         <PropertyShowcase />
         <Services />
+        <ImageSection />
         <HowItWorks />
         <WhyChooseUs />
         <RevenueCalculator />
-        <RentalComparison />
         <OwnerPortal />
+        <RentalComparison />
         <OwnerTestimonials />
         <FAQ />
-        <CTA />
       </main>
-      <Footer />
+      <FooterBgImage />
+      {/* <Footer /> */}
       <WhatsAppWidget />
     </>
   );

@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import Pic from "@/public/about-us.jpg";
 
 export default function AboutHero() {
   return (
@@ -11,7 +12,7 @@ export default function AboutHero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://media.assettype.com/gulfnews%2F2025-05-05%2Fm6t0jnfn%2FStock-Dubai-Holding-3.jpg?rect=317%2C0%2C7275%2C5456&w=1920&auto=format%2Ccompress&fit=max"
+          src={Pic}
           alt="Dubai skyline and modern architecture"
           fill
           className="object-cover"
@@ -54,17 +55,27 @@ export default function AboutHero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
           >
-            Elevating luxury short-term rental management in Dubai with international expertise and personalized service
+            Elevating luxury short-term rental management in Dubai with
+            international expertise and personalized service
           </motion.p>
         </div>
       </div>
 
       {/* Decorative bottom wave */}
       <div className="absolute -bottom-[18px] md:-bottom-[12px] left-0 right-0">
-        <svg className="w-full h-12 md:h-16" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 48H1440V0C1440 0 1140 48 720 48C300 48 0 0 0 0V48Z" fill="white"/>
+        <svg
+          className="w-full h-12 md:h-16"
+          viewBox="0 0 1440 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 48H1440V0C1440 0 1140 48 720 48C300 48 0 0 0 0V48Z"
+            fill="white"
+          />
         </svg>
       </div>
     </section>
   );
 }
+

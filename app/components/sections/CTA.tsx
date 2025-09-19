@@ -4,24 +4,31 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { Button } from "../ui/Button";
 import Pic from "@/public/pics/palm/pool.jpg";
+import Image from "next/image";
+import Logo from "@/public/wyz-logo-white.png";
 
-export default function CTA() {
+type CTAProps = {
+  withLogo?: boolean;
+};
+
+export default function CTA({ withLogo }: CTAProps) {
   return (
     <section
       id="contact"
       className="relative py-16 sm:py-20 md:py-24 px-4 md:px-6 lg:px-8 overflow-hidden"
     >
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${Pic.src})`,
-        }}
-      />
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 container mx-auto max-w-4xl text-center">
         {/* Main Heading */}
+        {withLogo && (
+          <Image
+            src={Logo}
+            alt="WYZRENT"
+            width={360}
+            height={100}
+            className="h-10 w-auto mb-4 mx-auto"
+          />
+        )}
         <motion.h2
           className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-white"
           initial={{ opacity: 0, y: 30 }}

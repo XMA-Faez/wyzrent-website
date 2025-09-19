@@ -54,7 +54,7 @@ export default function ContactForm() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
-      console.log("Form successfully submitted to CRM");
+      // Form successfully submitted to CRM
       
       setSubmitStatus('success');
       reset();

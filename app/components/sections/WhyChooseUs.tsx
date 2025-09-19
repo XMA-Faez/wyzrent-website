@@ -136,7 +136,7 @@ export default function WhyChooseUs() {
                     <div className="">
                       <div className="flex items-start gap-4">
                         <div className="">
-                          <div className="text-gray-700 p-2">{benefit.icon}</div>
+                          <div className={`p-2 ${benefit.color}`}>{benefit.icon}</div>
                         </div>
                         <div className="flex-1">
                           <h3 className="text-lg font-semibold text-gray-900 mb-1">

@@ -119,12 +119,12 @@ export default function RevenueCalculator() {
   };
 
   return (
-    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-slate-950 to-slate-900">
+    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-t from-slate-950 to-slate-900">
       <motion.div
         className="container mx-auto"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
         viewport={{ once: true }}
       >
         {/* Header */}
@@ -132,7 +132,7 @@ export default function RevenueCalculator() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
             viewport={{ once: true }}
           >
             {/*  <Badge className="uppercase tracking-wider text-xs sm:text-sm bg-gradient-to-r from-blue-500/20 to-emerald-500/20 text-blue-200 border border-blue-500/30 backdrop-blur-sm"> */}
@@ -155,7 +155,7 @@ export default function RevenueCalculator() {
               className="lg:col-span-3 space-y-8"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-3 mb-8">
@@ -170,7 +170,7 @@ export default function RevenueCalculator() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
+                  transition={{ duration: 0.3, delay: 0.15 }}
                   viewport={{ once: true }}
                 >
                   <label className="block text-sm font-semibold text-slate-200 mb-3">
@@ -211,7 +211,7 @@ export default function RevenueCalculator() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
                   <label className="block text-sm font-semibold text-slate-200 mb-3">
@@ -238,7 +238,7 @@ export default function RevenueCalculator() {
                   className="md:col-span-2"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
+                  transition={{ duration: 0.3, delay: 0.25 }}
                   viewport={{ once: true }}
                 >
                   <label className="block text-sm font-semibold text-slate-200 mb-3">
@@ -271,7 +271,7 @@ export default function RevenueCalculator() {
               className="lg:col-span-2"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.3, delay: 0.15 }}
               viewport={{ once: true }}
             >
               <div className="sticky top-8">
@@ -302,7 +302,7 @@ export default function RevenueCalculator() {
                             className="text-5xl font-bold bg-gradient-to-r from-blue-300 to-emerald-300 bg-clip-text text-transparent mb-2"
                             initial={{ scale: 0.5 }}
                             animate={{ scale: 1 }}
-                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
                           >
                             AED {animatedValue.toLocaleString()}
                           </motion.div>

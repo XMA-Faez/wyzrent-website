@@ -17,7 +17,6 @@ export default function AboutUs() {
         <WhoWeAre />
         <MissionVision />
         <CEOMessage />
-        <CTA />
       </main>
       <Footer />
       <WhatsAppWidget />
