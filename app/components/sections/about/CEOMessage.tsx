@@ -35,14 +35,19 @@ export default function CEOMessage() {
               className="lg:col-span-1"
             >
               <div className="sticky top-8">
-                <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-xl mb-6">
-                  <Image
-                    src="https://demo1.angelostone.ca/wp-content/uploads/2025/03/ceo.jpeg"
-                    alt="Louloua Bahri - CEO"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="relative w-full max-w-sm mx-auto lg:max-w-none">
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl mb-6 bg-gray-100">
+                    <Image
+                      src="https://demo1.angelostone.ca/wp-content/uploads/2025/03/ceo.jpeg"
+                      alt="Louloua Bahri - CEO"
+                      width={400}
+                      height={533}
+                      className="object-cover w-full h-full"
+                      sizes="(max-width: 768px) 320px, (max-width: 1024px) 400px, 300px"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  </div>
                 </div>
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-900 mb-1">Louloua Bahri</h3>

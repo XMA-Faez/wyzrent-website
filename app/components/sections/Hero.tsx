@@ -73,55 +73,6 @@ export default function Hero() {
                 Average 35% higher returns than traditional rentals. Superhost
                 management with 4.9★ guest ratings.
               </motion.p>
-              <motion.div
-                className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
-              >
-                <span className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm text-white/95">
-                  <svg
-                    className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Licensed by Dubai Tourism
-                </span>
-                <span className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm text-white/95">
-                  <svg
-                    className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  110+ Luxury Properties
-                </span>
-                <span className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm text-white/95">
-                  <svg
-                    className="w-4 h-4 sm:w-5 sm:h-5 text-rose-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Airbnb Superhost
-                </span>
-              </motion.div>
               <div className="flex flex-wrap gap-3 sm:gap-4 mt-6 sm:mt-8">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -153,7 +104,7 @@ export default function Hero() {
                       variant="outline"
                       rightIcon={<span aria-hidden="true">→</span>}
                       aria-label="Get your free property valuation"
-                      className="text-white border-white hover:bg-white/20 hover:scale-105 transition-transform backdrop-blur-sm"
+                      className="text-white border-white/40 hover:bg-white/20 hover:scale-105 transition-transform backdrop-blur-sm"
                     >
                       Estimate Your Revenue
                     </Button>

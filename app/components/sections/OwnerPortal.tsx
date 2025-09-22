@@ -10,6 +10,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Badge } from "../ui/Badge";
+import ReservationApp from "./owner-portal/ReservationApp";
 
 export default function OwnerPortal() {
   const features = [
@@ -104,156 +105,8 @@ export default function OwnerPortal() {
                 />
 
                 {/* App Content Overlay */}
-                <div
-                  className="absolute"
-                  style={{
-                    top: "17px",
-                    right: "21px",
-                    left: "20px",
-                    bottom: "20px",
-                  }}
-                >
-                  <div className="bg-white rounded-[1.5rem] overflow-hidden h-full shadow-inner">
-                    {/* Status Bar */}
-                    <div className="flex justify-between items-center px-3 py-2 bg-stone-50">
-                      <div className="text-sm relative left-5 font-medium">
-                        9:41
-                      </div>
-                      <div className="flex gap-1">
-                        <div className="w-3 h-1.5 bg-green-500 rounded-sm"></div>
-                        <div className="w-4 h-1.5 bg-gray-300 rounded-sm"></div>
-                      </div>
-                    </div>
-
-                    {/* App Header */}
-                    <div className="px-3 py-2 border-b border-gray-100">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-semibold text-sm">
-                          Property Calendar
-                        </h3>
-                        <div className="flex gap-1">
-                          <button className="p-1 rounded bg-gray-100">
-                            <ChevronLeft className="w-3 h-3" />
-                          </button>
-                          <button className="p-1 rounded bg-gray-100">
-                            <ChevronRight className="w-3 h-3" />
-                          </button>
-                        </div>
-                      </div>
-                      <p className="text-xs text-gray-500 mt-0.5">
-                        {calendarData.currentMonth}
-                      </p>
-                    </div>
-
-                    {/* Calendar Grid */}
-                    <div className="p-3 flex-1 overflow-y-auto">
-                      <div className="grid grid-cols-7 gap-0.5 mb-2">
-                        {["S", "M", "T", "W", "T", "F", "S"].map((day) => (
-                          <div
-                            key={day}
-                            className="text-center text-[10px] text-gray-500 font-medium py-1"
-                          >
-                            {day}
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Calendar Days with Bookings */}
-                      <div className="grid grid-cols-7 gap-0.5">
-                        {Array.from({ length: 35 }, (_, i) => {
-                          const day = i - 6; // Start from Sunday
-                          const hasBooking =
-                            day > 0 && day <= 31 && Math.random() > 0.7;
-                          const booking =
-                            calendarData.bookings[
-                              Math.floor(
-                                Math.random() * calendarData.bookings.length,
-                              )
-                            ];
-
-                          return (
-                            <motion.div
-                              key={i}
-                              className={`
-                                aspect-square text-[10px] flex items-center justify-center rounded
-                                ${
-                                  day <= 0 || day > 31
-                                    ? "text-gray-300"
-                                    : hasBooking
-                                      ? `${booking?.color} text-white font-medium`
-                                      : "hover:bg-gray-100 cursor-pointer"
-                                }
-                              `}
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              transition={{ delay: i * 0.01 }}
-                            >
-                              {day > 0 && day <= 31 ? day : ""}
-                            </motion.div>
-                          );
-                        })}
-                      </div>
-
-                      {/* Booking Legend */}
-                      <div className="mt-3 space-y-1">
-                        <h4 className="text-xs font-medium text-gray-700">
-                          Upcoming Bookings
-                        </h4>
-                        <div className="overflow-y-auto space-y-1">
-                          {calendarData.bookings
-                            .slice(0, 5)
-                            .map((booking, index) => (
-                              <motion.div
-                                key={index}
-                                className="flex items-center justify-between p-1.5 bg-stone-50 rounded"
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.5 + index * 0.1 }}
-                              >
-                                <div className="flex items-center gap-2">
-                                  <div
-                                    className={`w-2 h-2 rounded-full ${booking.color}`}
-                                  ></div>
-                                  <div>
-                                    <div className="text-xs font-medium">
-                                      {booking.guest}
-                                    </div>
-                                    <div className="text-[10px] text-gray-500">
-                                      Dec {booking.dates}
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="text-[10px] text-gray-500">
-                                  {booking.guests} guests
-                                </div>
-                              </motion.div>
-                            ))}
-                        </div>
-
-                        {/* Monthly Stats */}
-                        <div className="mt-3 pt-2 border-t border-gray-200">
-                          <div className="grid grid-cols-2 gap-1">
-                            <div className="bg-blue-50 p-2 rounded text-center">
-                              <div className="text-xs font-bold text-blue-600">
-                                85%
-                              </div>
-                              <div className="text-[10px] text-blue-500">
-                                Occupancy
-                              </div>
-                            </div>
-                            <div className="bg-green-50 p-2 rounded text-center">
-                              <div className="text-xs font-bold text-green-600">
-                                $12,450
-                              </div>
-                              <div className="text-[10px] text-green-500">
-                                Revenue
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="absolute pointer-events-none top-2 left-[6.5%] w-[87%] h-[96%] bg-gradient-to-b from-black/20 to-black/10 backdrop-blur-sm rounded-3xl shadow-inner overflow-hidden z-10">
+                  <ReservationApp />
                 </div>
               </div>
             </div>

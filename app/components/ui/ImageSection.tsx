@@ -2,9 +2,15 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import Pic from "@/public/pics/address/Balc--1-picked.jpg";
 
-function ImageSection() {
+interface ImageSectionProps {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+}
+
+function ImageSection({ src, alt, width = 1920, height = 1080 }: ImageSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -37,10 +43,10 @@ function ImageSection() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <Image
-            src={Pic}
-            alt="WYZ Rent"
-            width={1920}
-            height={1080}
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
             className="w-full h-auto object-cover rounded-2xl"
             priority
           />

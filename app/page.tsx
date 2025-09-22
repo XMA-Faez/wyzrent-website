@@ -12,6 +12,8 @@ import {
 import HowItWorks from "./components/sections/HowItWorks";
 import { TrustBadges, RevenueCalculator, ImageSection } from "./components/ui";
 import WhatsAppWidget from "./components/ui/WhatsAppWidget";
+import Pic1 from "@/public/pics/address/Balc--1-picked.jpg";
+import Pic2 from "@/public/pics/jbr/LivingRoom.jpg";
 
 export default function Home() {
   return (
@@ -22,12 +24,13 @@ export default function Home() {
         <TrustBadges />
         <PropertyShowcase />
         <Services />
-        <ImageSection />
+        <ImageSection src={Pic1.src} alt="Luxury property in Dubai" />
         <HowItWorks />
         <WhyChooseUs />
         <RevenueCalculator />
         <OwnerPortal />
         <RentalComparison />
+        <ImageSection src={Pic2.src} alt="Luxury property in Dubai" />
         <OwnerTestimonials />
         <FAQ />
       </main>
