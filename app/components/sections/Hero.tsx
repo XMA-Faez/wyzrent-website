@@ -98,7 +98,7 @@ export default function Hero() {
                   transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
                   className="mt-6 sm:mt-8"
                 >
-                  <Link href="/contact-us#consultation">
+                  <Link href="/#revenue-calculator">
                     <Button
                       size="lg"
                       variant="outline"

@@ -35,7 +35,7 @@ export default function RevenueCalculator() {
 
   const furnishingOptions = [
     "Unfurnished",
-    "Semi-Furnished", 
+    "Semi-Furnished",
     "Fully Furnished",
     "Luxury Furnished",
   ];
@@ -73,18 +73,28 @@ export default function RevenueCalculator() {
     "Luxury Furnished": 1.2,
   };
 
-  const calculateRevenue = (areaValue: string, bedroomsValue: string, furnishingValue: string) => {
+  const calculateRevenue = (
+    areaValue: string,
+    bedroomsValue: string,
+    furnishingValue: string,
+  ) => {
     if (!areaValue || !bedroomsValue || !furnishingValue) return null;
 
     const baseRate = baseRates[areaValue] || 8000;
     const calculatedRevenue = Math.round(
-      baseRate * bedroomMultiplier[bedroomsValue] * furnishingMultiplier[furnishingValue],
+      baseRate *
+        bedroomMultiplier[bedroomsValue] *
+        furnishingMultiplier[furnishingValue],
     );
 
     return calculatedRevenue;
   };
 
-  const updateCalculation = (newArea: string, newBedrooms: string, newFurnishing: string) => {
+  const updateCalculation = (
+    newArea: string,
+    newBedrooms: string,
+    newFurnishing: string,
+  ) => {
     const newResult = calculateRevenue(newArea, newBedrooms, newFurnishing);
     if (newResult !== null) {
       setResult(newResult);
@@ -119,7 +129,10 @@ export default function RevenueCalculator() {
   };
 
   return (
-    <section className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-t from-slate-950 to-slate-900">
+    <section
+      id="revenue-calculator"
+      className="py-16 sm:py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-t from-slate-950 to-slate-900"
+    >
       <motion.div
         className="container mx-auto"
         initial={{ opacity: 0, y: 20 }}
@@ -360,11 +373,7 @@ export default function RevenueCalculator() {
                         </div>
 
                         {/* CTA Button */}
-                        <Button
-                          variant="primary"
-                          size="lg"
-                          className="w-full"
-                        >
+                        <Button variant="primary" size="lg" className="w-full">
                           Book Free Consultation
                         </Button>
                       </motion.div>
@@ -429,4 +438,3 @@ export default function RevenueCalculator() {
     </section>
   );
 }
-
